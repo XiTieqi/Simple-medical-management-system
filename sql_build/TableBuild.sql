@@ -64,18 +64,7 @@ CREATE TABLE Prescription
     RXtime TIME,
     Paystate BIT,--布尔
     Price INT,
-    Intro CHAR(200),
-);
-
-CREATE TABLE AssistIntro
-(  
-    Assistno SMALLINT,
-    RXno CHAR(9),
-        FOREIGN KEY (RXno) REFERENCES Prescription(RXno)
-            ON DELETE CASCADE
-            ON UPDATE CASCADE,
-    Intro CHAR(200),
-    PRIMARY KEY (Assistno,RXno),
+    Intro VARCHAR(200),
 );
 
 CREATE TABLE Medicine
