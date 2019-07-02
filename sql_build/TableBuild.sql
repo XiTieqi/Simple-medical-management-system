@@ -32,7 +32,7 @@ CREATE TABLE Dschedule
     PRIMARY KEY (Dno,Dworkdate,Dworktime),
 );
 
-CREATE TABLE Drelexdate
+/*CREATE TABLE Drelexdate
 (
     Dno CHAR(9),
         FOREIGN KEY (Dno) REFERENCES Doctor(Dno)
@@ -41,7 +41,7 @@ CREATE TABLE Drelexdate
     Drelexdate DATE,
     PRIMARY KEY (Dno,Drelexdate),
 );
-
+*/
 CREATE TABLE Patient
 (   
     Pno CHAR(9)  PRIMARY KEY,

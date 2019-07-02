@@ -1,0 +1,6 @@
+CREATE ROLE PR
+   -- GRANT ALL PRIVILEGES ON TABLE Register,Patient TO PR
+
+CREATE ROLE PD
+ --  GRANT SELECT ON TABLE Dchedule,Doctor,Medicine TO PD
+   -- GRANT SELECT UPDATE INSERT ON TABLE Prescription,Register TO PD
