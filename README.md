@@ -1,8 +1,7 @@
 
 # Simple Medical Management System
 
-    先跑databasebuild.sql(修改两个filename)  
-    *另：sql语句最好大写*
+*sql语句最好大写*
 
 
 ##### 医院信息管理系统（药品库存、收费、医生病人、挂号等）

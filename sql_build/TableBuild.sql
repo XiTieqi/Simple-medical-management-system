@@ -85,7 +85,7 @@ CREATE TABLE Pharmacy --药房
 
 CREATE TABLE PMM --药房中有的药
 (
-    PMno SMALLINT(2),
+    PMno SMALLINT,
         FOREIGN KEY (PMno) REFERENCES Pharmacy(PMno)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
@@ -110,7 +110,7 @@ CREATE TABLE Register --挂号
     Rdate DATE,
     Rtime_begin TIME,
     Rtime_end TIME,
-    Rstate TINYINT(1) --等待、进行、结束
+    Rstate TINYINT CHECK(Rstate IN(0,1,2)) --等待、进行、结束
     PRIMARY KEY(Dno,Pno),
 );
 
