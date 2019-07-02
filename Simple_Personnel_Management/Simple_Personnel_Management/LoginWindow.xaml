@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_Personnel_Management"
         mc:Ignorable="d"
-        Title="HR管理程序登入窗口" Height="450" Width="800">
+        Title="HR管理程序登入窗口" Height="450" Width="800" Visibility="Visible" WindowStyle="None">
     <Grid>
-        <Button Content="登入" HorizontalAlignment="Left" Margin="240,248,0,0" VerticalAlignment="Top" Width="121" Height="49" Click="Button_Click"/>
-        <Button Content="退出" HorizontalAlignment="Left" Margin="431,248,0,0" VerticalAlignment="Top" Width="121" Height="49" Click="Button_Click_Exit"/>  
+        <Button Content="登入" HorizontalAlignment="Left" Margin="257,248,0,0" VerticalAlignment="Top" Width="121" Height="49" Click="Button_Click" BorderBrush="#FF707070" Foreground="Black"/>
+        <Button Content="退出" HorizontalAlignment="Left" Margin="431,248,0,0" VerticalAlignment="Top" Width="121" Height="49" Click="Button_Click_Exit"/>
         <Label Content="用户名" HorizontalAlignment="Left" Margin="212,83,0,0" VerticalAlignment="Top" Height="40" Width="65"/>
         <Label Content="密码" HorizontalAlignment="Left" Margin="212,128,0,0" VerticalAlignment="Top" Height="40" Width="65"/>
         <TextBox HorizontalAlignment="Left" Height="28" Margin="282,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" Name="username"/>

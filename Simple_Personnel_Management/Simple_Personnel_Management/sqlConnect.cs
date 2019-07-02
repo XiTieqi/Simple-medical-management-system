@@ -18,7 +18,7 @@ namespace Simple_Personnel_Management{
                 if (conn.State == ConnectionState.Closed) conn.Open();
             }
         }
-        public void closeConnect()
+        public void closeConnect() 
         {
             if (conn.State == ConnectionState.Open) conn.Close();
         }

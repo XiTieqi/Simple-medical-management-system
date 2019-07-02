@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_Personnel_Management"
         mc:Ignorable="d"
-        Title="HR管理程序" Height="450" Width="800">
+        Title="HR管理程序" Height="450" Width="800" WindowStyle="None">
     <Grid/>
 </Window>
