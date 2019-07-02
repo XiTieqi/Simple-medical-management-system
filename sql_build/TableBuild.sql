@@ -79,13 +79,13 @@ CREATE TABLE Medicine
 
 CREATE TABLE Pharmacy --药房
 (
-    PMno CHAR(2) PRIMARY KEY,
+    PMno SMALLINT PRIMARY KEY,
     Picksite CHAR(20),
 );
 
 CREATE TABLE PMM --药房中有的药
 (
-    PMno CHAR(2),
+    PMno SMALLINT(2),
         FOREIGN KEY (PMno) REFERENCES Pharmacy(PMno)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
@@ -95,6 +95,7 @@ CREATE TABLE PMM --药房中有的药
             ON UPDATE CASCADE,
     Mnum SMALLINT NOT NULL,
 );
+
 
 CREATE TABLE Register --挂号
 (
@@ -106,9 +107,10 @@ CREATE TABLE Register --挂号
             ON UPDATE CASCADE,
     Rno CHAR(6),
     Rtype CHAR(4) CHECK (Rtype IN ('专家','普通')),
-    Rtime1 DATE,
-    Rtime2_begin TIME,
-    Rtime2_end TIME,
+    Rdate DATE,
+    Rtime_begin TIME,
+    Rtime_end TIME,
+    Rstate TINYINT(1) --等待、进行、结束
     PRIMARY KEY(Dno,Pno),
 );
 
@@ -122,16 +124,10 @@ CREATE TABLE RXM --处方中开的药
         FOREIGN KEY(Mno) REFERENCES Medicine(Mno)
              ON UPDATE CASCADE,
     Mnum SMALLINT,
+    Mstate BIT,--是否取药
+    PMno SMALLINT,--可去药房（ TO DO: 增加可去多个药房的方案 ）
+        FOREIGN KEY (PMno) REFERENCES Pharmacy(PMno)
+            ON UPDATE CASCADE,
     PRIMARY KEY (RXno,Mno),
 );
 
---CREATE TABLE Stock--库房 可不用
---(
---  Mno CHAR(9),
---      FOREIGN KEY (Mno) REFERENCES Medicine(Mno), 
- --  PMno CHAR(10),
- --       FOREIGN KEY (PMno) REFERENCES Pharmacy(PMno),
---    Snum INT,
- --   PRIMARY KEY (Mno,PMno),
---);
- 
