@@ -17,6 +17,7 @@ CREATE TABLE Doctor
         FOREIGN KEY (Deptno) REFERENCES Dept(Deptno)
             ON UPDATE CASCADE,  
     Drelexdate INT,
+    Dpassword VARCHAR(10),
 );
 
 CREATE TABLE Dschedule
