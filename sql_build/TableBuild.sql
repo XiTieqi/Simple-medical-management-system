@@ -2,7 +2,7 @@
 CREATE TABLE ACCOUNT
 (
     username CHAR(10) PRIMARY KEY,
-    password CHAR(10),
+    password CHAR(10) NOT NULL,
     Permission INT,--0人事部 、1挂号程序、2医生界面
 )
 
@@ -55,7 +55,7 @@ CREATE TABLE Patient
     Pno CHAR(9)  PRIMARY KEY,
     Pname CHAR(20),
     Psex CHAR(2) CHECK (Psex in('男','女')),
-    Page SMALLINT ,
+    P_age SMALLINT ,
     Pbal NUMERIC(8,2)
 );
 
