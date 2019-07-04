@@ -10,7 +10,7 @@
         <Button Content="退出" HorizontalAlignment="Left" Margin="45,260,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Exit_Click"/>
         <Button Content="科室管理" HorizontalAlignment="Left" Margin="45,44,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Dept_Click" RenderTransformOrigin="0.541,1.324"/>
         <Button Content="药物管理" HorizontalAlignment="Left" Margin="45,115,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Pharmacy_Click"/>
-        <Button Content="医生管理" HorizontalAlignment="Left" Margin="45,186,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Dept_Click"/>
+        <Button Content="医生管理" HorizontalAlignment="Left" Margin="45,186,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Doctor_Click"/>
         <!--DataGrid Name="DeptdataGrid"  AutoGenerateColumns="False" Margin="218,44,10,61" Visibility="Visible">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="" Width="10"/>

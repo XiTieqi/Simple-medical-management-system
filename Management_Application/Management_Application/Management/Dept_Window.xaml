@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Dept_Window" Height="450" Width="800">
     <Grid>
-        <Label Name="DeptNo" Content="科室号" HorizontalAlignment="Left" Margin="112,142,0,0" VerticalAlignment="Top" Height="44" Width="51"/>
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="218,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135"/>
+        <Label Content="科室号" HorizontalAlignment="Left" Margin="112,142,0,0" VerticalAlignment="Top" Height="44" Width="51"/>
+        <TextBox Name="TextDeptNo" HorizontalAlignment="Left" Height="40" Margin="218,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135"/>
         <Label Content="科室名" HorizontalAlignment="Left" Margin="404,140,0,0" VerticalAlignment="Top" Height="46" Width="52"/>
-        <TextBox Name="DeptName" HorizontalAlignment="Left" Height="42" Margin="542,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134"/>
+        <TextBox Name="TextDeptName" HorizontalAlignment="Left" Height="42" Margin="542,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134"/>
         <Button Name="ConfirmButton" Content="确定" HorizontalAlignment="Left" Margin="168,293,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="ConfirmButton_Click"/>
-        <Button Name="CancelButton" Content="取消" HorizontalAlignment="Left" Margin="479,293,0,0" VerticalAlignment="Top" Width="105" Height="38"/>
+        <Button Name="CloseButton" Content="关闭" HorizontalAlignment="Left" Margin="479,293,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="CloseButton_Click"/>
 
     </Grid>
 </Window>

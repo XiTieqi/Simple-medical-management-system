@@ -14,7 +14,6 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 
-
 namespace Management_Application.Management
 {
     /// <summary>
@@ -28,17 +27,24 @@ namespace Management_Application.Management
         public Dept_Window()
         {
             InitializeComponent();
-        }
-        public string AddData()
-        {
-            this.Show();
 
         }
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                sql = "INSERT INTO Dept VALUES(" + TextDeptNo.Text + "," + TextDeptName.Text + ")";
+                con.OperateData(sql);
             }
+            catch
+            {
+                MessageBox.Show("不能进行该操作", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 

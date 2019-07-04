@@ -1,6 +1,13 @@
-CREATE ROLE PR
-   -- GRANT ALL PRIVILEGES ON TABLE Register,Patient TO PR
 
-CREATE ROLE PD
- --  GRANT SELECT ON TABLE Dchedule,Doctor,Medicine TO PD
-   -- GRANT SELECT UPDATE INSERT ON TABLE Prescription,Register TO PD
+
+
+
+CREATE LOGIN Medical_Data_Management WITH PASSWORD = '666666',DEFAULT_DATABASE=Medical_Data_Management_System
+EXEC SP_ADDLOGIN 'Register','Doctor','Pharmacy','Mnagement'
+
+USE MASTER 
+GO
+CREATE USER LOGIN Medical_Data_Management FOR LOGIN Management
+GO
+   EXEC SP_GRANTDBACCESS 'Medical_Data_Management','Management'
+   EXEC SP_ADDROLEMEMBER 'db_owner','Management'

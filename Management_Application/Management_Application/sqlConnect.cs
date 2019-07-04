@@ -20,7 +20,8 @@ namespace Management_Application
         {
             if (conn == null)
             {
-                conn = new SqlConnection("Data Source = (local); database = Medical_Data_Management_System ;uid = HRmanagement;password = 666666;");
+                string Loginsql = @"server = TIEQIDEPAVILION\SQLEXPRESS; database = Medical_Data_Management_System; uid = Medical_Data_Management; pwd = 666666";
+                conn = new SqlConnection(Loginsql);
                 if (conn.State == ConnectionState.Closed) conn.Open();
             }
         }

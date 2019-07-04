@@ -18,7 +18,7 @@ namespace Management_Application.Management
 {
     /// <summary>
     /// Management_Window.xaml 的交互逻辑
-    /// </summary>  
+    /// </summary>
     public partial class Management_Window : Window
     {
         public byte Wstate = 0; //当前活动窗口标识  0 部门管理
@@ -30,7 +30,17 @@ namespace Management_Application.Management
             try
             {
                 sql = "";// To Do
-                if ( Wstate == 0 ) { sql = "SELECT Deptno AS 科室编号, Deptname AS 科室名 FROM Dept"; }
+                if (Wstate == 0)
+                {
+                    sql = "SELECT Deptno AS 科室编号, Deptname AS 科室名 FROM Dept";
+                }
+                else if (Wstate == 1)
+                {
+                }
+                else if (Wstate == 2) 
+                {
+                    sql = "SELECT Dno AS 医生编号, Dname AS 姓名, Dsex AS 性别 , Dage AS 年龄, Dprot AS 职称, Deptname AS 所属科室 FROM Doctor,Dept WHERE Doctor.Deptno=Dept.Deptno ";
+                }
                 con.BindDataGrid(manageDataGrid, sql);
                 //manageDataGrid.Columns[0].IsReadOnly = true;
                 //manageDataGrid.AllowDrop = false;
@@ -49,30 +59,31 @@ namespace Management_Application.Management
 
         private void Dept_Click(object sender, RoutedEventArgs e)
         {
-            Dept_Window deptW = new Dept_Window();
-            deptW.Show();
-            this.Hide();
+            Wstate = 0;
+            setBind();
         }
 
         private void Pharmacy_Click(object sender, RoutedEventArgs e)
         {
-
+            Wstate = 1;
+            setBind();
         }
 
-        private void DgData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Doctor_Click(object sender, RoutedEventArgs e)
         {
+            Wstate = 2;
+            setBind();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             if (Wstate == 0)
             {
-                Dept_Window Dept_Add = new Dept_Window();
-                Dept_Add.Show();
+                Dept_Window deptW = new Dept_Window();
+                deptW.Owner = this;
+                deptW.Show();//To Do 刷新操作
             }
-
         }
+
     }
-
-
 }
