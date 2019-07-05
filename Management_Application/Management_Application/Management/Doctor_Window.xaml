@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:Management_Application.Management"
         mc:Ignorable="d"
         Title="Doctor_Window" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,0,0,-1">
+        <Label Content="医生编号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="634,60,0,0"/>
+        <Label Content="性别" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="219,60,0,0"/>
+        <Label Content="出生日期" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,140,0,0"/>
+        <Label Content="职称" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="312,64,0,0"/>
+        <Label Content="所属科室" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="432,62,0,0"/>
+        <Label Content="医生姓名" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,62,0,0"/>
+        <TextBox Name="Textname" HorizontalAlignment="Left" Height="23" Margin="79,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.008,0.478"/>
+        <TextBox Name="Textsex" HorizontalAlignment="Left" Height="23" Margin="258,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="36"/>
+        <TextBox Name="Textprot" HorizontalAlignment="Left" Height="23" Margin="351,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="56"/>
+        <TextBox Name="Textdept" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="71" Margin="513,64,0,0"/>
+        <TextBox Name="Textno" HorizontalAlignment="Left" Height="23" Margin="697,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="63"/>
+        <TextBox Name="Textbirth" HorizontalAlignment="Left" Height="23" Margin="79,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="ConfirmButton" Content="确定" HorizontalAlignment="Left" Margin="202,203,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="ConfirmButton_Click"/>
+        <Button Name="CloseButton" Content="关闭" HorizontalAlignment="Left" Margin="513,203,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="CloseButton_Click"/>
     </Grid>
 </Window>

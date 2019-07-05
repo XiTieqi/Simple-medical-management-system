@@ -19,7 +19,7 @@ CREATE TABLE Doctor
     Dno CHAR(9) PRIMARY KEY,
     Dname CHAR(20) NOT NULL,
     Dsex CHAR(2) CHECK (Dsex in('男','女')),
-    Dage SMALLINT,
+    Dbirth DATE,
     Dprot CHAR(16),--职称 
     Deptno CHAR(3) NOT NULL,
         FOREIGN KEY (Deptno) REFERENCES Dept(Deptno)
@@ -55,7 +55,7 @@ CREATE TABLE Patient
     Pno CHAR(9)  PRIMARY KEY,
     Pname CHAR(20),
     Psex CHAR(2) CHECK (Psex in('男','女')),
-    P_age SMALLINT ,
+    Pbirth DATE ,
     Pbal NUMERIC(8,2)
 );
 
