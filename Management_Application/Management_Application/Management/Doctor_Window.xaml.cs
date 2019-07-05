@@ -33,7 +33,7 @@ namespace Management_Application.Management
         {
             try
             {
-                sql = "INSERT INTO Doctor VALUES('" + Textno.Text + "','" + Textname.Text + "','" + Textsex.Text + "','" + Textbirth.Text + "','" + Textprot.Text + "','" + Textdept.Text + "','" + ")";
+                sql = "INSERT INTO Doctor VALUES('" + Textno.Text + "','" + Textname.Text + "','" + Textsex.Text + "','" + Date.SelectedDate + "','" + Textprot.Text + "','" + Textdept.Text + "','" + ")";
                 con.OperateData(sql);
             }
             catch

@@ -98,12 +98,12 @@ namespace Management_Application.Management
             }
         }
 
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        private void ManageDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void ManageDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
