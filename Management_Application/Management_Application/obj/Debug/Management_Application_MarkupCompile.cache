@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\App.xaml
-10-1992006951
+121593478257
 
-16422704167
+181078985973
 13-1505183044
-Dotctor\DoctorMainWindow.xaml;Dotctor\WelcomWindow.xaml;LoginWindow.xaml;MainWindow.xaml;Management\Dept_Window.xaml;Management\Doctor_Window.xaml;Management\Management_Window.xaml;Management\Pharmacy_Window.xaml;Register\PatientWindow.xaml;Register\UserWindow.xaml;
+Dotctor\DoctorMainWindow.xaml;Dotctor\WelcomWindow.xaml;LoginWindow.xaml;Management\Dept_Window.xaml;Management\Doctor_Window.xaml;Management\Management_Window.xaml;Management\Pharmacy_Window.xaml;Pharmacy\PharmacyWindow.xaml;Register\ChargeWindow.xaml;Register\PatientWindow.xaml;Register\RegisterWindow.xaml;Register\UserWindow.xaml;
 
-True
+False
 

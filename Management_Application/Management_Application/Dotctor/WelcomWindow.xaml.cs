@@ -23,5 +23,12 @@ namespace Management_Application.Dotctor
         {
             InitializeComponent();
         }
+
+        private void Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            DoctorMainWindow doctorMW = new DoctorMainWindow();
+            doctorMW.Show();
+            this.Close();
+        }
     }
 }

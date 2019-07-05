@@ -1,5 +1,5 @@
 ﻿
-CREATE TABLE Acount
+CREATE TABLE Account
 (
     username VARCHAR(10) PRIMARY KEY,
     password VARCHAR(100) NOT NULL,

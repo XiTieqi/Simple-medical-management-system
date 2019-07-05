@@ -29,24 +29,56 @@ namespace Management_Application
         {
             InitializeComponent();
         }
-
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             string pass;
-            if (this.username.Text == "" || this.passward.Text == "")
+            /*if (this.username.Text == "" || this.passward.Text == "")
                 MessageBox.Show("用户名或者密码不能为空！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             else
-            try
+            {
+                pass = this.passward.Text;
+                pass = MD5Encrypt32(pass);
+                sql = "SELECT ISNULL((SELECT TOP(1) 1 FROM Account WHERE username=" + this.username.Text + "AND password=" + pass + "), 0)";
+                ds = con.Getds(sql);
+                if (ds.Tables["RoomType"].Select("Number=" + 1).Length < 0)
                 {
-                    pass = this.passward.Text;
-                    pass = MD5Encrypt32(pass);
-                }
-            catch
-                {
-                  
-
                     MessageBox.Show("用户名或者密码错误！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
+                else
+                {
+                    sql = "SELECT Permission FROM Account WHERE username=" + this.username.Text + "AND password=" + pass + ")";
+                    ds = con.Getds(sql);
+                    if(ds.Tables["RoomType"].Select("Number=" + 0).Length > 0)
+                    {
+                        Management.Management_Window managementW = new Management.Management_Window();
+                        managementW.Show();
+                        this.Close();
+                    }
+                    else if(ds.Tables["RoomType"].Select("Number=" + 1).Length > 0)
+                    {
+                        Register.UserWindow userW = new Register.UserWindow();
+                        userW.Show();
+                        this.Close();
+
+                    }
+                    else if (ds.Tables["RoomType"].Select("Number=" + 2).Length > 0)
+                    {
+                        Dotctor.WelcomWindow doctorW = new Dotctor.WelcomWindow();
+                        doctorW.Show();
+                        this.Close();
+
+                    }
+                    else if (ds.Tables["RoomType"].Select("Number=" + 3).Length > 0)
+                    {
+                        Pharmacy.PharmacyWindow pharmacyW = new Pharmacy.PharmacyWindow();
+                        pharmacyW.Show();
+                        this.Close();
+                    }
+                }*/
+            Management.Management_Window managementW = new Management.Management_Window();
+            managementW.Show();
+            this.Close();
+        
         }
         public string MD5Encrypt32(string password)//32位MD5加密
         {

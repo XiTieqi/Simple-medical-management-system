@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="800">
     <Grid>
-        <Button Name="Login" Content="登入" HorizontalAlignment="Left" Margin="257,248,0,0" VerticalAlignment="Top" Width="121" Height="49" Click="Login_Click"/>
+        <Button Name="Login" Content="登入" HorizontalAlignment="Left" Margin="212,248,0,0" VerticalAlignment="Top" Width="121" Height="49" Click="Login_Click"/>
         <Button Name="Exit" Content="退出" HorizontalAlignment="Left" Margin="431,248,0,0" VerticalAlignment="Top" Width="121" Height="49" Click="Exit_Click"/>
         <Label Content="用户名" HorizontalAlignment="Left" Margin="212,83,0,0" VerticalAlignment="Top" Height="40" Width="65"/>
         <Label Content="密码" HorizontalAlignment="Left" Margin="212,128,0,0" VerticalAlignment="Top" Height="40" Width="65"/>

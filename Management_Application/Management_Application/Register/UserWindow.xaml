@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UserWindow" Height="450" Width="800">
     <Grid>
-        <Button Name="ConfirmButton" Content="进入" HorizontalAlignment="Left" Margin="309,233,0,0" VerticalAlignment="Top" Width="126" Height="57"/>
+        <Button Name="ConfirmButton" Content="进入" HorizontalAlignment="Left" Margin="243,255,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="ConfirmButton_Click"/>
         <TextBox Name="Pno" HorizontalAlignment="Left" Height="23" Margin="366,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="身份证号" HorizontalAlignment="Left" Margin="277,153,0,0" VerticalAlignment="Top" Width="69" Height="23"/>
 

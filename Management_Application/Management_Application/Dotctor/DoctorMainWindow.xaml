@@ -17,19 +17,18 @@
         <TextBox HorizontalAlignment="Left" Height="118" Margin="63,253,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562"/>
         <Label Content="诊断描述:" HorizontalAlignment="Left" Margin="26,223,0,0" VerticalAlignment="Top" Width="63"/>
         <Button Name="Next" Content="下一位" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Margin="660,298,0,0" Height="73"/>
-        <Label Content="药品名称" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,78,0,0"/>
-        <Label Content="药品编号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,80,0,0"/>
-        <Label Content="添加数量" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,78,0,0" RenderTransformOrigin="0.586,1.72" Width="74"/>
-        <TextBox Name="Textno" HorizontalAlignment="Left" Height="23" Margin="288,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="46"/>
-        <TextBox Name="Textnum" HorizontalAlignment="Left" Height="23" Margin="429,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="111"/>
+        <Label Content="药品名称" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,76,0,0"/>
+        <Label Content="药品编号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="211,78,0,0"/>
+        <Label Content="添加数量" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="331,76,0,0" RenderTransformOrigin="0.586,1.72" Width="74"/>
+        <TextBox Name="Textno" HorizontalAlignment="Left" Height="23" Margin="269,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="46"/>
+        <TextBox Name="Textnum" HorizontalAlignment="Left" Height="23" Margin="410,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="45"/>
         <DataGrid Name="RXM" HorizontalAlignment="Left" Height="100" Margin="63,119,0,0" VerticalAlignment="Top" Width="541"/>
-        <Button Name="Add" Content="添加" HorizontalAlignment="Left" Margin="559,80,0,0" VerticalAlignment="Top" Width="45" Height="25"/>
+        <Button Name="Add" Content="添加" HorizontalAlignment="Left" Margin="509,76,0,0" VerticalAlignment="Top" Width="45" Height="25" RenderTransformOrigin="-0.044,0.6"/>
         <Label Content="处方ID：" HorizontalAlignment="Left" Margin="57,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.175,0.4"/>
         <Label Content="******" HorizontalAlignment="Left" Margin="131,27,0,0" VerticalAlignment="Top"/>
         <Label Content="挂号时间：" HorizontalAlignment="Left" Margin="234,27,0,0" VerticalAlignment="Top"/>
         <Label Content="*****" HorizontalAlignment="Left" Margin="304,25,0,0" VerticalAlignment="Top" Width="44"/>
-        <TextBox Name="Mname" HorizontalAlignment="Left" Height="23" Margin="105,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-
-
+        <TextBox Name="Mname" HorizontalAlignment="Left" Height="23" Margin="86,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="DeleteButton" Content="删除" HorizontalAlignment="Left" Margin="562,76,0,0" VerticalAlignment="Top" Width="42" Height="25" RenderTransformOrigin="-0.429,0.52"/>
     </Grid>
 </Window>
