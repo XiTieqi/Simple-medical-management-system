@@ -3,13 +3,13 @@ CREATE TABLE ACCOUNT
 (
     username CHAR(10) PRIMARY KEY,
     password CHAR(10) NOT NULL,
-    Permission INT,--0人事部 、1挂号程序、2医生界面
+    Permission INT,--0人事部 、1挂号程序、2医生界面、3药房界面
 )
 
 
 CREATE TABLE Dept
 (
-    Deptno INT PRIMARY KEY,
+    Deptno CHAR(3) PRIMARY KEY,
     Deptname CHAR(40) NOT NULL,
     Dnum INT,
 );
@@ -21,7 +21,7 @@ CREATE TABLE Doctor
     Dsex CHAR(2) CHECK (Dsex in('男','女')),
     Dage SMALLINT,
     Dprot CHAR(16),--职称 
-    Deptno INT NOT NULL,
+    Deptno CHAR(3) NOT NULL,
         FOREIGN KEY (Deptno) REFERENCES Dept(Deptno)
             ON UPDATE CASCADE,  
     Drelexdate INT,

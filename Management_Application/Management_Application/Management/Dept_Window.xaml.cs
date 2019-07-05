@@ -33,7 +33,7 @@ namespace Management_Application.Management
         {
             try
             {
-                sql = "INSERT INTO Dept VALUES(" + TextDeptNo.Text + "," + TextDeptName.Text + ")";
+                sql = "INSERT INTO Dept VALUES('" + TextDeptNo.Text + "','" + TextDeptName.Text + "'," + "0)";
                 con.OperateData(sql);
             }
             catch
@@ -47,7 +47,4 @@ namespace Management_Application.Management
             this.Close();
         }
     }
-
-
-
 }

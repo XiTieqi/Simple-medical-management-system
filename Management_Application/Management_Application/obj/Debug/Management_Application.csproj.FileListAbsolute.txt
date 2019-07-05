@@ -19,3 +19,7 @@ D:\DB\Simple-medical-management-system\Management_Application\Management_Applica
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Management_Application.csproj.CoreCompileInputs.cache
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Management_Application.exe
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Management_Application.pdb
+D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Management\Doctor_Window.g.cs
+D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Management\Pharmacy_Window.g.cs
+D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Management\Doctor_Window.baml
+D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Management\Pharmacy_Window.baml

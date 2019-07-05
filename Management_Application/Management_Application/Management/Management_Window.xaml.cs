@@ -83,6 +83,18 @@ namespace Management_Application.Management
                 deptW.Owner = this;
                 deptW.Show();//To Do 刷新操作
             }
+            else if (Wstate == 1)
+            {
+                Pharmacy_Window pharW = new Pharmacy_Window();
+                pharW.Owner = this;
+                pharW.Show();
+            }
+            else if (Wstate == 2)
+            {
+                Doctor_Window drW = new Doctor_Window();
+                drW.Owner = this;
+                drW.Show();
+            }
         }
 
     }

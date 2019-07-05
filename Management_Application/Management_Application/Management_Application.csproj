@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Management\Doctor_Window.xaml.cs">
+      <DependentUpon>Doctor_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Pharmacy_Window.xaml.cs">
+      <DependentUpon>Pharmacy_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sqlConnect.cs" />
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
@@ -79,7 +85,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Management\Doctor_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Management\Management_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Pharmacy_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
