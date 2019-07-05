@@ -36,10 +36,11 @@ namespace Management_Application.Management
                 }
                 else if (Wstate == 1)
                 {
+                    sql = "SELECT Mno AS 药物编号, Mtype AS 药物类型, Mname AS 药物名字,Mprice AS 药物价格, Mdescrip AS 药物描述,Mnum 药物数量 FROM Medicine";
                 }
                 else if (Wstate == 2) 
                 {
-                    sql = "SELECT Dno AS 医生编号, Dname AS 姓名, Dsex AS 性别 , Dage AS 年龄, Dprot AS 职称, Deptname AS 所属科室 FROM Doctor,Dept WHERE Doctor.Deptno=Dept.Deptno ";
+                    sql = "SELECT Dno AS 医生编号, Dname AS 姓名, Dsex AS 性别 , Dbirth AS 出生日期, Dprot AS 职称, Deptname AS 所属科室 FROM Doctor,Dept WHERE Doctor.Deptno=Dept.Deptno ";
                 }
                 con.BindDataGrid(manageDataGrid, sql);
                 //manageDataGrid.Columns[0].IsReadOnly = true;
@@ -97,5 +98,14 @@ namespace Management_Application.Management
             }
         }
 
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ManageDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

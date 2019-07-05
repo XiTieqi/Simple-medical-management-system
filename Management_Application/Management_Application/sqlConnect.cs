@@ -56,8 +56,10 @@ namespace Management_Application
             if (conn.State == ConnectionState.Closed) conn.Open();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             DataSet ds = new DataSet();
-            da.Fill(ds);
-            dg.DataContext = ds.Tables[0];
+            ds.Clear();
+            DataTable table1 = new DataTable();
+            da.Fill(ds,"table1");
+            dg.DataContext = ds;
             return ds;
         }
     }

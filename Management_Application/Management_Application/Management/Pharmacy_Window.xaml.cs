@@ -34,7 +34,7 @@ namespace Management_Application.Management
         {
             try
             {
-                sql = "INSERT INTO Dept VALUES('" + TextDeptNo.Text + "','" + TextDeptName.Text + "'," + "0)";
+                sql = "INSERT INTO Medicine VALUES('" + Textno.Text + "','" + Texttype.Text + "','" + Textname.Text + "','" + Textprice.Text + "','" + Textdescrip.Text + "','" + Textnum.Text + ")";
                 con.OperateData(sql);
             }
             catch

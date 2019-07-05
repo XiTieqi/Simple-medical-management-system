@@ -18,8 +18,8 @@
                 <DataGridTextColumn Header="科室名" Width="80" Binding="{Binding 职员姓名, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </DataGrid.Columns>
         </DataGrid-->
-        <Button Name="DeleteButton" Content="保存" HorizontalAlignment="Left" Margin="313,310,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="DeleteButton" Content="删除" HorizontalAlignment="Left" Margin="313,310,0,0" VerticalAlignment="Top" Width="75" Click="DeleteButton_Click"/>
         <Button Name="AddButton"  Content="添加" HorizontalAlignment="Left" Margin="621,310,0,0" VerticalAlignment="Top" Width="75" Click="AddButton_Click"/>
-        <DataGrid Name="manageDataGrid" HorizontalAlignment="Left" Height="250" Margin="289,44,0,0" VerticalAlignment="Top" Width="441"/>
+        <DataGrid Name="manageDataGrid" HorizontalAlignment="Left" Height="250" Margin="289,44,0,0" VerticalAlignment="Top" Width="441" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}" SelectionChanged="ManageDataGrid_SelectionChanged" SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True"/>
     </Grid>
 </Window>
