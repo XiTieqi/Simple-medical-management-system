@@ -1,7 +1,7 @@
 ﻿
 CREATE TABLE ACCOUNT
 (
-    username CHAR(10) PRIMARY KEY,
+    username VARCHAR(10) PRIMARY KEY,
     password CHAR(10) NOT NULL,
     Permission INT,--0人事部 、1挂号程序、2医生界面、3药房界面
 )
