@@ -52,7 +52,7 @@ CREATE TABLE Dschedule
 */
 CREATE TABLE Patient
 (   
-    Pno CHAR(9)  PRIMARY KEY,
+    Pno CHAR(18)  PRIMARY KEY,
     Pname VARCHAR(20),
     Psex CHAR(2) CHECK (Psex in('男','女')),
     P_age SMALLINT ,
