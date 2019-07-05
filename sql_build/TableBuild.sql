@@ -1,11 +1,10 @@
 ﻿
-CREATE TABLE ACCOUNT
+CREATE TABLE Acount
 (
     username VARCHAR(10) PRIMARY KEY,
-    password CHAR(10) NOT NULL,
+    password VARCHAR(100) NOT NULL,
     Permission INT,--0人事部 、1挂号程序、2医生界面、3药房界面
 )
-
 
 CREATE TABLE Dept
 (
