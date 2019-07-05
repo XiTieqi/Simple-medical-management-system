@@ -58,9 +58,6 @@
     <Compile Include="Dotctor\DoctorMainWindow.xaml.cs">
       <DependentUpon>DoctorMainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dotctor\PrescriptWindow.xaml.cs">
-      <DependentUpon>PrescriptWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Dotctor\WelcomWindow.xaml.cs">
       <DependentUpon>WelcomWindow.xaml</DependentUpon>
     </Compile>
@@ -72,10 +69,6 @@
     </Compile>
     <Compile Include="sqlConnect.cs" />
     <Page Include="Dotctor\DoctorMainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Dotctor\PrescriptWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

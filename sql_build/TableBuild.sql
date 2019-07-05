@@ -10,14 +10,14 @@ CREATE TABLE ACCOUNT
 CREATE TABLE Dept
 (
     Deptno CHAR(3) PRIMARY KEY,
-    Deptname CHAR(40) NOT NULL,
+    Deptname VARCHAR(40) NOT NULL,
     Dnum INT,
 );
 
 CREATE TABLE Doctor
 (   
     Dno CHAR(9) PRIMARY KEY,
-    Dname CHAR(20) NOT NULL,
+    Dname VARCHAR(20) NOT NULL,
     Dsex CHAR(2) CHECK (Dsex in('男','女')),
     Dbirth DATE,
     Dprot CHAR(16),--职称 
@@ -53,7 +53,7 @@ CREATE TABLE Dschedule
 CREATE TABLE Patient
 (   
     Pno CHAR(9)  PRIMARY KEY,
-    Pname CHAR(20),
+    Pname VARCHAR(20),
     Psex CHAR(2) CHECK (Psex in('男','女')),
     Pbirth DATE ,
     Pbal NUMERIC(8,2)
@@ -79,7 +79,7 @@ CREATE TABLE Medicine
 (
     Mno CHAR(9) PRIMARY KEY,
     Mtype CHAR(20),
-    Mname CHAR(40),
+    Mname VARCHAR(40),
     Mprice NUMERIC(8,2),
     Mdescrip CHAR(50),
     Mnum INT,

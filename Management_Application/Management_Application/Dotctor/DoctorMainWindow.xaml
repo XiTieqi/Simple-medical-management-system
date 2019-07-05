@@ -7,10 +7,24 @@
         mc:Ignorable="d"
         Title="DoctorMainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="病人ID:" HorizontalAlignment="Left" Margin="231,10,0,0" VerticalAlignment="Top"/>
-        <Label Name="Pno" Content="0000000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="289,10,0,0"/>
-        <Label Content="病人名称：" HorizontalAlignment="Left" Margin="408,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.15,0.72"/>
-        <Label Name="Pname" Content="***" HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="病人ID:" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top"/>
+        <Label Name="Pno" Content="0000000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,10,0,0"/>
+        <Label Content="病人名称：" HorizontalAlignment="Left" Margin="203,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.15,0.72"/>
+        <Label Name="Pname" Content="***" HorizontalAlignment="Left" Margin="285,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="剩余病人数：" HorizontalAlignment="Left" Margin="353,10,0,0" VerticalAlignment="Top"/>
+        <Label Name="Number" Content="Number" HorizontalAlignment="Left" Margin="439,10,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="660,43,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Height="118" Margin="63,278,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562"/>
+        <Label Content="诊断描述:" HorizontalAlignment="Left" Margin="26,248,0,0" VerticalAlignment="Top" Width="63"/>
+        <Button Name="Next" Content="下一位" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Margin="668,323,0,0" Height="73"/>
+        <Label Content="药品名称" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,83,0,0"/>
+        <Label Content="药品编号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="217,85,0,0"/>
+        <Label Content="添加数量" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="337,83,0,0" RenderTransformOrigin="0.586,1.72" Width="74"/>
+        <TextBox x:Name="Textname" HorizontalAlignment="Left" Height="23" Margin="124,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
+        <TextBox x:Name="Textno" HorizontalAlignment="Left" Height="23" Margin="275,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="46"/>
+        <TextBox x:Name="Textnum" HorizontalAlignment="Left" Height="23" Margin="416,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="111"/>
+        <DataGrid Name="RXM" HorizontalAlignment="Left" Height="100" Margin="50,124,0,0" VerticalAlignment="Top" Width="541"/>
+        <Button Name="Add" Content="添加" HorizontalAlignment="Left" Margin="546,85,0,0" VerticalAlignment="Top" Width="45" Height="25"/>
 
 
     </Grid>
