@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="WelcomWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="欢迎" HorizontalAlignment="Left" Margin="239,170,0,0" VerticalAlignment="Top"/>
+        <Label Content="欢迎" HorizontalAlignment="Left" Margin="270,170,0,0" VerticalAlignment="Top"/>
         <Label Name="Dname" Content="****" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="386,170,0,0"/>
+        <Button Name="Confirm" Content="确定" HorizontalAlignment="Left" Margin="343,269,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

@@ -27,3 +27,5 @@ D:\DB\Simple-medical-management-system\Management_Application\Management_Applica
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Dotctor\WelcomWindow.g.cs
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Dotctor\DoctorMainWindow.baml
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Dotctor\WelcomWindow.baml
+D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Register\UserWindow.g.cs
+D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Register\UserWindow.baml

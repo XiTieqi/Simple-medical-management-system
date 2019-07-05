@@ -1,0 +1,22 @@
+﻿<Window x:Class="Management_Application.Register.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Management_Application.Register"
+        mc:Ignorable="d"
+        Title="RegisterWindow" Height="450" Width="800">
+    <Grid>
+        <Button Name="ReturnButton" Content="返回" HorizontalAlignment="Left" Margin="27,94,0,0" VerticalAlignment="Top" Width="75" Height="42"/>
+        <Button Name="Exit" Content="退出" HorizontalAlignment="Left" Margin="27,330,0,0" VerticalAlignment="Top" Width="75" Height="42"/>
+        <DataGrid HorizontalAlignment="Left" Height="174" Margin="247,94,0,0" VerticalAlignment="Top" Width="445"/>
+        <Label Content="日期" HorizontalAlignment="Left" Margin="68,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="{x:Static sys:DateTime.Now}" HorizontalAlignment="Left" Margin="147,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="余额" HorizontalAlignment="Left" Margin="372,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="******.**" HorizontalAlignment="Left" Margin="436,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="已挂号" HorizontalAlignment="Left" Margin="177,313,0,0" VerticalAlignment="Top"/>
+        <DataGrid HorizontalAlignment="Left" Height="79" Margin="247,330,0,0" VerticalAlignment="Top" Width="445"/>
+
+    </Grid>
+</Window>
