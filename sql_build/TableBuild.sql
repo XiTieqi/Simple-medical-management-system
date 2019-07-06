@@ -2,7 +2,7 @@
 CREATE TABLE Account
 (
     username VARCHAR(10) PRIMARY KEY,
-    password VARCHAR(100) NOT NULL,
+    password VARCHAR(100) DEFAULT 'F379EAF3C831B04DE153469D1BEC345E',
     Permission INT,--0人事部 、1挂号程序、2医生界面、3药房界面
 )
 
@@ -113,7 +113,7 @@ CREATE TABLE Register --挂号
             ON DELETE CASCADE
             ON UPDATE CASCADE,
     Rno CHAR(6),
-    Rtype CHAR(4) CHECK (Rtype IN ('专家','普通')),
+    --Rtype CHAR(4) CHECK (Rtype IN ('专家','普通')),
     Rdate DATE,
     Rtime_begin TIME,
     Rtime_end TIME,

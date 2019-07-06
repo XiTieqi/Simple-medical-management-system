@@ -12,25 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Management_Application.Register
+namespace Management_Application.Management
 {
     /// <summary>
-    /// RegisterWindow.xaml 的交互逻辑
+    /// AccountWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class RegisterWindow : Window
+    public partial class AccountWindow : Window
     {
-        string pno;
-        PatientWindow PaW;
-        public RegisterWindow(string no,PatientWindow _PaW)
+        public AccountWindow()
         {
             InitializeComponent();
-            pno = no;
-            PaW = _PaW;
-        }
-        private void ReturnButton_Click(object sender, RoutedEventArgs e)
-        {
-            PaW.Visibility = Visibility.Visible;
-            this.Close();
         }
     }
 }

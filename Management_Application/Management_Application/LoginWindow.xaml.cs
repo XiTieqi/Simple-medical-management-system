@@ -32,7 +32,7 @@ namespace Management_Application
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             string pass;
-            /*if (this.username.Text == "" || this.passward.Text == "")
+            if (this.username.Text == "" || this.passward.Text == "")
                 MessageBox.Show("用户名或者密码不能为空！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             else
             {
@@ -48,13 +48,13 @@ namespace Management_Application
                 {
                     sql = "SELECT Permission FROM Account WHERE username=" + this.username.Text + "AND password=" + pass + ")";
                     ds = con.Getds(sql);
-                    if(ds.Tables["RoomType"].Select("Number=" + 0).Length > 0)
+                    if (ds.Tables["RoomType"].Select("Number=" + 0).Length > 0)
                     {
-                        Management.Management_Window managementW = new Management.Management_Window();
-                        managementW.Show();
+                        Management.Management_Window manW = new Management.Management_Window();
+                        manW.Show();
                         this.Close();
                     }
-                    else if(ds.Tables["RoomType"].Select("Number=" + 1).Length > 0)
+                    else if (ds.Tables["RoomType"].Select("Number=" + 1).Length > 0)
                     {
                         Register.UserWindow userW = new Register.UserWindow();
                         userW.Show();
@@ -63,7 +63,7 @@ namespace Management_Application
                     }
                     else if (ds.Tables["RoomType"].Select("Number=" + 2).Length > 0)
                     {
-                        Dotctor.WelcomWindow doctorW = new Dotctor.WelcomWindow();
+                        Dotctor.WelcomWindow doctorW = new Dotctor.WelcomWindow(this.username.Text);
                         doctorW.Show();
                         this.Close();
 
@@ -74,14 +74,14 @@ namespace Management_Application
                         pharmacyW.Show();
                         this.Close();
                     }
-                }*/
-            Management.Management_Window managementW = new Management.Management_Window();
-            managementW.Show();
-            this.Close();
-        
+                }
+                Management.Management_Window managementW = new Management.Management_Window();
+                managementW.Show();
+                this.Close();
+            }
         }
         public string MD5Encrypt32(string password)//32位MD5加密
-        {
+            {
             string cl = password;
             string pwd = "";
             MD5 md5 = MD5.Create();

@@ -10,7 +10,7 @@
         <Button Content="退出" HorizontalAlignment="Left" Margin="45,260,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Exit_Click"/>
         <Button Content="科室管理" HorizontalAlignment="Left" Margin="45,44,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Dept_Click" RenderTransformOrigin="0.541,1.324"/>
         <Button Content="药物管理" HorizontalAlignment="Left" Margin="45,96,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Pharmacy_Click"/>
-        <Button Content="医生管理" HorizontalAlignment="Left" Margin="45,210,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Doctor_Click"/>
+        <Button Content="医生管理" HorizontalAlignment="Left" Margin="45,204,0,0" VerticalAlignment="Top" Width="98" Height="34" Click="Doctor_Click"/>
         <!--DataGrid Name="DeptdataGrid"  AutoGenerateColumns="False" Margin="218,44,10,61" Visibility="Visible">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="" Width="10"/>
@@ -18,12 +18,14 @@
                 <DataGridTextColumn Header="科室名" Width="80" Binding="{Binding 职员姓名, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </DataGrid.Columns>
         </DataGrid-->
-        <Button Name="SaveButton" Content="保存" HorizontalAlignment="Left" Margin="319,310,0,0" VerticalAlignment="Top" Width="75" Click="SaveButton_Click"/>
-        <Button Name="AddButton"  Content="添加" HorizontalAlignment="Left" Margin="621,310,0,0" VerticalAlignment="Top" Width="75" Click="AddButton_Click"/>
-        <DataGrid Name="manageDataGrid" HorizontalAlignment="Left" Height="250" Margin="288,44,0,0" VerticalAlignment="Top" Width="441" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}" SelectionChanged="ManageDataGrid_SelectionChanged" SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True">
+        <Button Name="SaveButton" Content="保存" HorizontalAlignment="Left" Margin="234,310,0,0" VerticalAlignment="Top" Width="75" Click="SaveButton_Click"/>
+        <Button Name="AddButton"  Content="添加" HorizontalAlignment="Left" Margin="600,310,0,0" VerticalAlignment="Top" Width="75" Click="AddButton_Click"/>
+        <DataGrid Name="manageDataGrid" HorizontalAlignment="Left" Height="250" Margin="234,44,0,0" VerticalAlignment="Top" Width="441" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}" SelectionChanged="ManageDataGrid_SelectionChanged" SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True">
         </DataGrid>
-        <Button Name="AccountButton" Content="账号管理" HorizontalAlignment="Left" Margin="45,151,0,0" VerticalAlignment="Top" Width="98" Height="39"/>
-        <Label Content="当前显示" HorizontalAlignment="Left" Margin="279,10,0,0" VerticalAlignment="Top"/>
+        <Button Name="AccountButton" Content="账号管理" HorizontalAlignment="Left" Margin="45,149,0,0" VerticalAlignment="Top" Width="98" Height="39" Click="AccountButton_Click"/>
+        <Label Content="当前显示" HorizontalAlignment="Left" Margin="192,10,0,0" VerticalAlignment="Top"/>
         <Label Name="State" Content="" HorizontalAlignment="Left" Margin="364,10,0,0" VerticalAlignment="Top"/>
+        <Button Name="Changekey" Content="修改密码" HorizontalAlignment="Left" Margin="471,310,0,0" VerticalAlignment="Top" Width="75" Visibility="Hidden"/>
+
     </Grid>
 </Window>

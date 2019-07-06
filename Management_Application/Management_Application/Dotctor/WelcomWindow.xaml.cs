@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Management_Application.Dotctor
 {
@@ -19,15 +21,24 @@ namespace Management_Application.Dotctor
     /// </summary>
     public partial class WelcomWindow : Window
     {
-        public WelcomWindow()
+        string Dno;
+        sqlConnect con = new sqlConnect();
+        public DataSet ds = new DataSet();
+        private string sql;
+
+        public WelcomWindow(string _Dno)
         {
             InitializeComponent();
+            Dno = _Dno;
+            sql = "";//查找相应的医生名称并显示
+            ds = con.Getds(sql);
+
         }
 
-        private void Confirm_Click(object sender, RoutedEventArgs e)
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            DoctorMainWindow doctorMW = new DoctorMainWindow();
-            doctorMW.Show();
+            DoctorMainWindow DMW = new DoctorMainWindow(Dno);
+            DMW.Show();
             this.Close();
         }
     }

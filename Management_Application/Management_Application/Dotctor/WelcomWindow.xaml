@@ -7,9 +7,12 @@
         mc:Ignorable="d"
         Title="WelcomWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="欢迎" HorizontalAlignment="Left" Margin="305,177,0,0" VerticalAlignment="Top"/>
-        <Label Name="Dname" Content="****" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="421,177,0,0"/>
-        <Button Name="Confirm" Content="确定" HorizontalAlignment="Left" Margin="343,269,0,0" VerticalAlignment="Top" Width="75" Click="Confirm_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Name="ConfirmButton" Content="进入" HorizontalAlignment="Left" Margin="312,256,0,0" VerticalAlignment="Top" Width="116" Height="63" Click="ConfirmButton_Click" />
+        <Label Content="欢迎" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,150,0,0"/>
+        <Label Name="Doctorname" Content="**********" HorizontalAlignment="Left" Margin="428,150,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

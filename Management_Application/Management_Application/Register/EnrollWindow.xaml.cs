@@ -11,46 +11,51 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Management_Application.Register
 {
     /// <summary>
-    /// UserWindow.xaml 的交互逻辑
+    /// EnrollWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class EnrollWindow : Window
     {
         sqlConnect con = new sqlConnect();
         public DataSet ds = new DataSet();
         private string sql;
-        public UserWindow()
+        UserWindow useW;
+        public EnrollWindow(UserWindow _useW)
         {
             InitializeComponent();
+            useW = _useW;
         }
 
-        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        private void EnrollButton_Click(object sender, RoutedEventArgs e)
         {
+            //==================================================================
             string sql;
             sql = "SELECT ISNULL((SELECT TOP(1) 1 FROM Account WHERE Patient=" + Pno.Text + "), 0)";
             ds = con.Getds(sql);
             if (ds.Tables["RoomType"].Select("Number=" + 1).Length < 0)
             {
-                MessageBox.Show("账户不存在！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+                sql = "INSERT INTO Doctor VALUES('" + Date.SelectedDate + "','";//=======================
+                con.OperateData(sql);
+                useW.Visibility = Visibility.Visible;
+                this.Close();
             }
             else
             {
-                PatientWindow paW = new PatientWindow(Pno.Text, this);
-                paW.Show();
-                this.Hide();
+                MessageBox.Show("账户已存在！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+               
+            
         }
 
-        private void EnroButton_Click(object sender, RoutedEventArgs e)
+        private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
-            EnrollWindow EnW = new EnrollWindow(this);
-            EnW.Show();
-            this.Hide();
+            useW.Visibility = Visibility.Visible;
+            this.Close();
         }
     }
 }

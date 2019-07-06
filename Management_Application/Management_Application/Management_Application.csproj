@@ -61,6 +61,9 @@
     <Compile Include="Dotctor\WelcomWindow.xaml.cs">
       <DependentUpon>WelcomWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Management\AccountWindow.xaml.cs">
+      <DependentUpon>AccountWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Management\Doctor_Window.xaml.cs">
       <DependentUpon>Doctor_Window.xaml</DependentUpon>
     </Compile>
@@ -72,6 +75,9 @@
     </Compile>
     <Compile Include="Register\ChargeWindow.xaml.cs">
       <DependentUpon>ChargeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register\EnrollWindow.xaml.cs">
+      <DependentUpon>EnrollWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Register\PatientWindow.xaml.cs">
       <DependentUpon>PatientWindow.xaml</DependentUpon>
@@ -102,6 +108,10 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Management\AccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Management\Dept_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +135,10 @@
     <Page Include="Register\ChargeWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Register\EnrollWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Register\PatientWindow.xaml">
       <SubType>Designer</SubType>

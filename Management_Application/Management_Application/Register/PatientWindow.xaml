@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="PatientWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="挂号" HorizontalAlignment="Left" Margin="170,172,0,0" VerticalAlignment="Top" Width="98" Height="74"/>
-        <Button Name="ChargeButton" Content="充值" HorizontalAlignment="Left" Margin="470,172,0,0" VerticalAlignment="Top" Width="110" Height="74"/>
+        <Button Name="RegisterButton" Content="挂号" HorizontalAlignment="Left" Margin="170,172,0,0" VerticalAlignment="Top" Width="98" Height="74" Click="RegisterButton_Click" />
+        <Button Name="ExitButton" Content="退出" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="74" Margin="504,172,0,0" Click="ExitButton_Click"/>
+        <Button Name="ChargeButton" Content="充值" HorizontalAlignment="Left" Margin="332,172,0,0" VerticalAlignment="Top" Width="110" Height="74" Click="ChargeButton_Click"/>
 
     </Grid>
 </Window>
