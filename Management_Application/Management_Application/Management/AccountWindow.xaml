@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="AccountWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="添加" HorizontalAlignment="Left" Margin="129,285,0,0" VerticalAlignment="Top" Width="82" Height="42"/>
+        <Button Content="添加" HorizontalAlignment="Left" Margin="158,281,0,0" VerticalAlignment="Top" Width="82" Height="42"/>
+        <Label Content="账户:" HorizontalAlignment="Left" Margin="92,116,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="AccountNo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="145,118,0,0"/>
+        <Label Name="Password" Content="密码" HorizontalAlignment="Left" Margin="92,162,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>
