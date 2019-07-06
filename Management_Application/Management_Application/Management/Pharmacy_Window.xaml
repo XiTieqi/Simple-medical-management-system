@@ -8,17 +8,17 @@
         Title="Pharmacy_Window" Height="450" Width="800">
     <Grid>
         <Label Content="药品名称" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,50,0,0"/>
-        <Label Content="药品编号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="281,50,0,0"/>
+        <Label Content="药品编号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="222,50,0,0"/>
         <Label Content="药品种类" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,99,0,0"/>
         <Label Content="药品单价" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,97,0,0"/>
-        <Label Content="添加数量" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="524,99,0,0" RenderTransformOrigin="0.586,1.72"/>
-        <Label Content="药品描述" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,137,0,0"/>
+        <Label Content="添加数量" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="508,103,0,0" RenderTransformOrigin="0.586,1.72"/>
+        <Label Content="药品描述" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,154,0,0"/>
         <TextBox Name="Textname" HorizontalAlignment="Left" Height="23" Margin="141,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
-        <TextBox Name="Textno" HorizontalAlignment="Left" Height="23" Margin="339,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Textno" HorizontalAlignment="Left" Height="23" Margin="280,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="Texttype" HorizontalAlignment="Left" Height="23" Margin="141,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="Textprice" HorizontalAlignment="Left" Height="23" Margin="361,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="Textnum" HorizontalAlignment="Left" Height="23" Margin="600,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="Textdescrip" HorizontalAlignment="Left" Height="23" Margin="141,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Textnum" HorizontalAlignment="Left" Height="23" Margin="584,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Textdescrip" HorizontalAlignment="Left" Height="23" Margin="141,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Name="ConfirmButton" Content="确定" HorizontalAlignment="Left" Margin="168,293,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="ConfirmButton_Click"/>
         <Button Name="CloseButton" Content="关闭" HorizontalAlignment="Left" Margin="479,293,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="CloseButton_Click"/>
     </Grid>

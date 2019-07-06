@@ -32,7 +32,7 @@ namespace Management_Application.Dotctor
             Dno = _Dno;
             sql = "";//查找相应的医生名称并显示
             ds = con.Getds(sql);
-
+            Doctorname.Content = ds.Tables[0].Rows[0];
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)

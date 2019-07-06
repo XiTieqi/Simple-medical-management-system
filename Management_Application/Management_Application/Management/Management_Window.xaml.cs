@@ -79,7 +79,6 @@ namespace Management_Application.Management
             Wstate = 2;
             setBind();
         }
-
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             if (Wstate == 0)
@@ -101,16 +100,9 @@ namespace Management_Application.Management
                 drW.Show();
             }
         }
-
-
-
         private void AccountButton_Click(object sender, RoutedEventArgs e)
         {
             Changekey.Visibility = Visibility.Visible;
-        }
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AccountWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="添加" HorizontalAlignment="Left" Margin="86,297,0,0" VerticalAlignment="Top" Width="82" Height="42"/>
+        <Button Content="添加" HorizontalAlignment="Left" Margin="129,285,0,0" VerticalAlignment="Top" Width="82" Height="42"/>
 
     </Grid>
 </Window>

@@ -182,6 +182,7 @@ namespace Management_Application.Dotctor
         }
 
         internal System.Windows.Controls.Label Dno;
+        internal System.Windows.Controls.ComboBox Mname;
     }
 }
 

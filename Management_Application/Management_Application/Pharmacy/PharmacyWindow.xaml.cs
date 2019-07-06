@@ -23,5 +23,10 @@ namespace Management_Application.Pharmacy
         {
             InitializeComponent();
         }
+
+        private void RXno_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

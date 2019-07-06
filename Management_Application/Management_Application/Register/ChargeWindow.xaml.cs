@@ -68,7 +68,7 @@ namespace Management_Application.Register
         }
         public void charge(int num)
         {
-            sql = "";//=========================================================================
+            sql = "";//给该用户加钱的语句
             con.OperateData(sql);
             textprint();
         }

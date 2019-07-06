@@ -33,13 +33,12 @@ namespace Management_Application.Register
 
         private void EnrollButton_Click(object sender, RoutedEventArgs e)
         {
-            //==================================================================
             string sql;
             sql = "SELECT ISNULL((SELECT TOP(1) 1 FROM Account WHERE Patient=" + Pno.Text + "), 0)";
             ds = con.Getds(sql);
             if (ds.Tables["RoomType"].Select("Number=" + 1).Length < 0)
             {
-                sql = "INSERT INTO Doctor VALUES('" + Date.SelectedDate + "','";//=======================
+                sql = "";//新加一个病人账户的语句
                 con.OperateData(sql);
                 useW.Visibility = Visibility.Visible;
                 this.Close();
@@ -48,8 +47,6 @@ namespace Management_Application.Register
             {
                 MessageBox.Show("账户已存在！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-               
-            
         }
 
         private void ReturnButton_Click(object sender, RoutedEventArgs e)

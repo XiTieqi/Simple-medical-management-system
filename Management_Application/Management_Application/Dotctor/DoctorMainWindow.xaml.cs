@@ -30,7 +30,28 @@ namespace Management_Application.Dotctor
         {
             InitializeComponent();
             dno = _Dno;
+            Dno.Content = dno;
         }
+        private void setGrid()
+        {
+            string gridsql = "";//查看处方药品的sql语句
+            con.BindDataGrid(RXM, gridsql);
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            if (Mname.SelectedItem == null) 
+            {
+                MessageBox.Show("请选择药物", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                sql = "";//添加药品名称数量...
+                con.OperateData(sql);
+            }
+            setGrid();
+        }
+      
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             if (state)
@@ -46,12 +67,13 @@ namespace Management_Application.Dotctor
         }
         private void LoadNextPatient()
         {
-            sql = "SELECT * FROM Register WHERE Dno="+dno+"AND ";
+            sql = "SELECT * FROM Register WHERE Dno="+dno+"AND ";//加载下一个病人
             ds = con.Getds(sql);
+            //显示操作
         }
         private void EndThisPatient()
         {
-            sql = "";
+            sql = "";//结束该病人的就诊
             ds = con.Getds(sql);
         }
     }
