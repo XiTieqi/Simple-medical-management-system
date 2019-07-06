@@ -68,7 +68,7 @@ namespace Management_Application.Register
         }
         public void charge(int num)
         {
-            sql = "";//给该用户加钱的语句
+            sql = "update Patient set Pbal=Pbal+" + string.Format("{0:000000.00}", num) + "where Patient.Pno=" + pno;//给该用户加钱的语句
             con.OperateData(sql);
             textprint();
         }
@@ -79,7 +79,5 @@ namespace Management_Application.Register
             ds = con.Getds(sql);
             this.Pbal.Content = ds.Tables[0].Rows[0];
         }
-
-
     }
 }

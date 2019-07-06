@@ -25,10 +25,14 @@ namespace Management_Application.Register
         public DataSet ds = new DataSet();
         private string sql;
         UserWindow useW;
+        List<string> sex = new List<string>();
         public EnrollWindow(UserWindow _useW)
         {
             InitializeComponent();
             useW = _useW;
+            sex.Add("男");
+            sex.Add("女");
+            Sex.ItemsSource = sex;
         }
 
         private void EnrollButton_Click(object sender, RoutedEventArgs e)
@@ -38,7 +42,7 @@ namespace Management_Application.Register
             ds = con.Getds(sql);
             if (ds.Tables["RoomType"].Select("Number=" + 1).Length < 0)
             {
-                sql = "";//新加一个病人账户的语句
+                sql = "insert into patient values(" + Pno.Text + "," + Textname.Text + "," + Sex.Text + "," + Date.Text + "0.00)";//新加一个病人账户的语句
                 con.OperateData(sql);
                 useW.Visibility = Visibility.Visible;
                 this.Close();
@@ -48,11 +52,20 @@ namespace Management_Application.Register
                 MessageBox.Show("账户已存在！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
             useW.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void Pno_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Textname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

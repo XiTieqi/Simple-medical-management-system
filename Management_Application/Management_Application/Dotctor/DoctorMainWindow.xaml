@@ -11,12 +11,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label Content="病人ID:" HorizontalAlignment="Left" Margin="57,0,0,0" VerticalAlignment="Top"/>
-        <Label Name="Pno" Content="0000000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="115,0,0,0"/>
-        <Label Content="病人名称：" HorizontalAlignment="Left" Margin="234,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.15,0.72"/>
+        <Label Name="Pno" Content="0000000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="115,2,0,0"/>
+        <Label Content="病人姓名：" HorizontalAlignment="Left" Margin="234,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.15,0.72"/>
         <Label Name="Pname" Content="***" HorizontalAlignment="Left" Margin="316,0,0,0" VerticalAlignment="Top"/>
         <Label Content="剩余病人数：" HorizontalAlignment="Left" Margin="384,0,0,0" VerticalAlignment="Top"/>
         <Label Name="Number" Content="Number" HorizontalAlignment="Left" Margin="470,0,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="165" Margin="660,27,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.54,0.39"/>
+        <Image HorizontalAlignment="Left" Height="165" Margin="682,10,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.54,0.39"/>
         <TextBox HorizontalAlignment="Left" Height="118" Margin="63,253,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562"/>
         <Label Content="诊断描述:" HorizontalAlignment="Left" Margin="26,223,0,0" VerticalAlignment="Top" Width="63"/>
         <Button Name="Next" Content="下一位" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Margin="660,298,0,0" Height="73" Click="Next_Click"/>
@@ -24,15 +24,15 @@
         <Label Content="药品编号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="235,80,0,0"/>
         <Label Content="添加数量" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="355,78,0,0" RenderTransformOrigin="0.586,1.72" Width="74"/>
         <TextBox Name="Textno" HorizontalAlignment="Left" Height="23" Margin="293,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="46"/>
-        <TextBox Name="Textnum" HorizontalAlignment="Left" Height="23" Margin="434,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="45"/>
+        <TextBox Name="Textnum" HorizontalAlignment="Left" Height="23" Margin="421,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="45"/>
         <DataGrid Name="RXM" HorizontalAlignment="Left" Height="100" Margin="63,119,0,0" VerticalAlignment="Top" Width="541" SelectionChanged="RXM_SelectionChanged"/>
         <Button Name="Add" Content="添加" HorizontalAlignment="Left" Margin="509,76,0,0" VerticalAlignment="Top" Width="45" Height="25" RenderTransformOrigin="-0.044,0.6" Click="Add_Click"/>
         <Label Content="处方ID：" HorizontalAlignment="Left" Margin="57,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.175,0.4"/>
-        <Label Content="******" HorizontalAlignment="Left" Margin="131,27,0,0" VerticalAlignment="Top"/>
+        <Label Name="RXno" Content="******" HorizontalAlignment="Left" Margin="131,27,0,0" VerticalAlignment="Top"/>
         <Label Content="挂号时间：" HorizontalAlignment="Left" Margin="234,27,0,0" VerticalAlignment="Top"/>
-        <Label Content="*****" HorizontalAlignment="Left" Margin="304,25,0,0" VerticalAlignment="Top" Width="44"/>
+        <Label Name="RegisterTime" Content="*****" HorizontalAlignment="Left" Margin="304,25,0,0" VerticalAlignment="Top" Width="44"/>
         <Button Name="DeleteButton" Content="删除" HorizontalAlignment="Left" Margin="562,76,0,0" VerticalAlignment="Top" Width="42" Height="25" RenderTransformOrigin="-0.429,0.52"/>
-        <ComboBox Name="Mname" HorizontalAlignment="Left" Margin="110,82,0,0" VerticalAlignment="Top" Width="120" IsEditable="True" IsTextSearchEnabled="True" />
+        <ComboBox Name="Mname" HorizontalAlignment="Left" Margin="110,82,0,0" VerticalAlignment="Top" Width="120" IsEditable="True" IsTextSearchEnabled="True" KeyUp="Mname_KeyUp" SelectionChanged="Mname_SelectionChanged"/>
         <Label Content="医生ID:" HorizontalAlignment="Left" Margin="384,25,0,0" VerticalAlignment="Top"/>
         <Label Name="Dno" Content="*****" HorizontalAlignment="Left" Margin="471,25,0,0" VerticalAlignment="Top"/>
     </Grid>
