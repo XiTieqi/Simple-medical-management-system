@@ -25,7 +25,7 @@
         <Label Content="添加数量" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="355,78,0,0" RenderTransformOrigin="0.586,1.72" Width="74"/>
         <TextBox Name="Textno" HorizontalAlignment="Left" Height="23" Margin="293,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="46"/>
         <TextBox Name="Textnum" HorizontalAlignment="Left" Height="23" Margin="421,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="45"/>
-        <DataGrid Name="RXM" HorizontalAlignment="Left" Height="100" Margin="63,119,0,0" VerticalAlignment="Top" Width="541" SelectionChanged="RXM_SelectionChanged"/>
+        <DataGrid Name="RXM" HorizontalAlignment="Left" Height="100" Margin="63,119,0,0" VerticalAlignment="Top" Width="541" SelectionChanged="RXM_SelectionChanged" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}" SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True"/>
         <Button Name="Add" Content="添加" HorizontalAlignment="Left" Margin="509,76,0,0" VerticalAlignment="Top" Width="45" Height="25" RenderTransformOrigin="-0.044,0.6" Click="Add_Click"/>
         <Label Content="处方ID：" HorizontalAlignment="Left" Margin="57,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.175,0.4"/>
         <Label Name="RXno" Content="******" HorizontalAlignment="Left" Margin="131,27,0,0" VerticalAlignment="Top"/>

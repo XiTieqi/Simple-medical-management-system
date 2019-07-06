@@ -55,8 +55,9 @@ CREATE TABLE Patient
     Pname VARCHAR(20),
     Psex CHAR(2) CHECK (Psex in('男','女')),
     Pbirth DATE ,
-    Pbal NUMERIC(8,2)
+    Pbal NUMERIC(8,2) default 0
 );
+
 
 CREATE TABLE Prescription
 (   
@@ -77,10 +78,10 @@ CREATE TABLE Prescription
 CREATE TABLE Medicine
 (
     Mno CHAR(9) PRIMARY KEY,
-    Mtype CHAR(20),
+    Mtype VARCHAR(20),
     Mname VARCHAR(40),
     Mprice NUMERIC(8,2),
-    Mdescrip CHAR(50),
+    Mdescrip VARCHAR(50),
     Mnum INT,
 );
 
@@ -89,7 +90,7 @@ CREATE TABLE Pharmacy --药房
     PMno SMALLINT PRIMARY KEY,
     Picksite CHAR(20),
 );
-
+/*
 CREATE TABLE PMM --药房中有的药
 (
     PMno SMALLINT,
@@ -101,7 +102,7 @@ CREATE TABLE PMM --药房中有的药
             ON DELETE CASCADE
             ON UPDATE CASCADE,
     Mnum SMALLINT NOT NULL,
-);
+);*/
 
 
 CREATE TABLE Register --挂号
@@ -132,9 +133,6 @@ CREATE TABLE RXM --处方中开的药
              ON UPDATE CASCADE,
     Mnum SMALLINT,
     Mstate BIT,--是否取药
-    PMno SMALLINT,--可去药房（ TO DO: 增加可去多个药房的方案 ）
-        FOREIGN KEY (PMno) REFERENCES Pharmacy(PMno)
-            ON UPDATE CASCADE,
     PRIMARY KEY (RXno,Mno),
 );
 

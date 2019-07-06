@@ -14,7 +14,7 @@
         <Label Content="余额" HorizontalAlignment="Left" Margin="322,10,0,0" VerticalAlignment="Top"/>
         <Label Content="******.**" HorizontalAlignment="Left" Margin="386,10,0,0" VerticalAlignment="Top"/>
         <Label Content="已挂号" HorizontalAlignment="Left" Margin="177,289,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name="RegisterGrid" HorizontalAlignment="Left" Height="79" Margin="247,306,0,0" VerticalAlignment="Top" Width="445"/>
+        <DataGrid Name="RegisterGrid" HorizontalAlignment="Left" Height="79" Margin="247,306,0,0" VerticalAlignment="Top" Width="445" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}" SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True"/>
 
     </Grid>
 </Window>

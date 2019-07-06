@@ -13,7 +13,7 @@
         <Label Name="Pno" Content="0000000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="291,31,0,0"/>
         <Label Content="病人名称：" HorizontalAlignment="Left" Margin="410,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.15,0.72"/>
         <Label Name="Pname" Content="***" HorizontalAlignment="Left" Margin="492,31,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name="Mgrid" HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="569" Margin="37,126,0,0"/>
+        <DataGrid Name="Mgrid" HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="569" Margin="37,126,0,0" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}"  SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True"/>
         <Label Content="药物" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,96,0,0"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="682,10,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>

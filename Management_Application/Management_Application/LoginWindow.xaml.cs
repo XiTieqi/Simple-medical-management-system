@@ -32,11 +32,11 @@ namespace Management_Application
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             string pass;
-            if (this.username.Text == "" || this.passward.Text == "")
+            if (this.username.Text == "" || this.passward.Password == "")
                 MessageBox.Show("用户名或者密码不能为空！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             else
             {
-                pass = this.passward.Text;
+                pass = this.passward.Password;
                 pass = MD5Encrypt32(pass);
                 sql = "SELECT ISNULL((SELECT TOP(1) 1 FROM Account WHERE username=" + this.username.Text + "AND password=" + pass + "), 0)";
                 ds = con.Getds(sql);
