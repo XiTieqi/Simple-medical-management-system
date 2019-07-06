@@ -24,6 +24,7 @@ namespace Management_Application.Pharmacy
         sqlConnect con = new sqlConnect();
         public DataSet ds = new DataSet();
         private string sql;
+        string pno, pname;
         public PharmacyWindow()
         {
             InitializeComponent();
@@ -31,14 +32,16 @@ namespace Management_Application.Pharmacy
 
         private void RXno_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //显示病人名称
-            sql = "";
+            sql = "select Pno from Prescription where RXno=" + RXno.Text;
             ds = con.Getds(sql);
-            Pno.Content=;
-            Pname.Content=;
+            pno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
 
-            sql = "select  Mno as 药品编号, Mname as 药品名称 from Medicine, RXM " +
-                "where Medicine.Mno = RXM.Mno and RXM.RXno=" + RXno.Text;
+            sql = "select Pname from Patient where Pno=" + pno;
+            ds = con.Getds(sql);
+            pname = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+
+            sql = "select  Mno as 药品编号, Mname as 药品名称 , Mnum as 药物数量,Mstate as  药物状态 , Mprice as 药品单价,  Mtype as 药片类型 from Medicine, RXM " +
+                "where Medicine.Mno= RXM.Mno and RXM.RXno=" + RXno.Text;
             con.BindDataGrid(Mgrid, sql);
         }
     }

@@ -29,7 +29,6 @@ namespace Management_Application.Management
         {
             try
             {
-                sql = "";// To Do
                 if (Wstate == 0)
                 {
                     sql = "SELECT Deptno AS 科室编号, Deptname AS 科室名 FROM Dept";
@@ -44,7 +43,7 @@ namespace Management_Application.Management
                 }
                 else if (Wstate == 3) 
                 {
-                    sql = "";
+                    sql = "SELECT username AS 账号,Permission AS 账户类型（0管理员账户、1挂号程序、2医生账户、3药房账户）FROM Account";
                 }
                 con.BindDataGrid(manageDataGrid, sql);
                 //manageDataGrid.Columns[0].IsReadOnly = true;
@@ -103,6 +102,12 @@ namespace Management_Application.Management
         private void AccountButton_Click(object sender, RoutedEventArgs e)
         {
             Changekey.Visibility = Visibility.Visible;
+        }
+
+        private void ManageDataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+            DataRow editdata = e.Row.Item as DataRow;
+
         }
     }
 }

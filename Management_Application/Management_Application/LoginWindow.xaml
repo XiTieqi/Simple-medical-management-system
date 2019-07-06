@@ -12,6 +12,6 @@
         <Label Content="用户名" HorizontalAlignment="Left" Margin="212,83,0,0" VerticalAlignment="Top" Height="40" Width="65"/>
         <Label Content="密码" HorizontalAlignment="Left" Margin="212,128,0,0" VerticalAlignment="Top" Height="40" Width="65"/>
         <TextBox HorizontalAlignment="Left" Height="28" Margin="282,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" Name="username"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="282,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" Name="passward"/>
+        <PasswordBox HorizontalAlignment="Left" Height="28" Margin="282,137,0,0" VerticalAlignment="Top" Width="286" Name="passward"/>
     </Grid>
 </Window>

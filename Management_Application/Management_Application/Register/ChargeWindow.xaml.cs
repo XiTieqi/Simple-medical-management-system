@@ -58,9 +58,6 @@ namespace Management_Application.Register
                 MessageBox.Show("请输入有效的值", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-
-
-
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
             PaW.Visibility = Visibility.Visible;

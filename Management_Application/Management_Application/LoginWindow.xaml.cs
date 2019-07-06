@@ -59,14 +59,12 @@ namespace Management_Application
                         Register.UserWindow userW = new Register.UserWindow();
                         userW.Show();
                         this.Close();
-
                     }
                     else if (ds.Tables["RoomType"].Select("Number=" + 2).Length > 0)
                     {
                         Dotctor.WelcomWindow doctorW = new Dotctor.WelcomWindow(this.username.Text);
                         doctorW.Show();
                         this.Close();
-
                     }
                     else if (ds.Tables["RoomType"].Select("Number=" + 3).Length > 0)
                     {
