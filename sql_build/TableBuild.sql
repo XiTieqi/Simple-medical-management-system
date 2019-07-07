@@ -118,7 +118,7 @@ CREATE TABLE Register --挂号
     Rdate DATE,
     Rtime_begin TIME,
     Rtime_end TIME,
-    Rstate TINYINT CHECK(Rstate IN(0,1,2)) DEFAULT 0,--等待、进行、结束
+    Rstate Char(1) DEFAULT '0',--等待、进行、结束
     PRIMARY KEY(Rno),
 );
 
@@ -135,5 +135,3 @@ CREATE TABLE RXM --处方中开的药
     Mstate BIT DEFAULT 0,--是否取药
     PRIMARY KEY (RXno,Mno),
 );
-
-

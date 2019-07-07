@@ -32,3 +32,4 @@ INSERT INTO Medicine VALUES('200101151','·Ç´¦·½Ò©','·ÓÂéÃÀÃôÆ¬£¨Ì©Åµ£©',13.48,'Ó
 INSERT INTO Medicine VALUES('109300101','·Ç´¦·½Ò©','Çå¿ªÁé¿ÅÁ£',29.59,'ÓÃÓÚÍâ¸Ð·çÈÈÊ±¶¾¡¢»ð¶¾ÄÚÊ¢ËùÖÂ¸ßÈÈ²»ÍË',150)
 INSERT INTO Medicine VALUES('200641231','·Ç´¦·½Ò©','Í¨ÇÏ±ÇÑ×Æ¬',20.58,'ÓÃÓÚ·çÈÈÔÌ·Î¡¢±íÐé²»¹ÌËùÖÂµÄ±ÇÈû',100)
 INSERT INTO Medicine VALUES('200632231','·Ç´¦·½Ò©','ÒøÇÌ½â¶¾½ºÄÒ',15.69,'ÓÃÓÚ·çÈÈ¸ÐÃ°',200)
+
