@@ -2,30 +2,30 @@
 CREATE TABLE Account
 (
     username VARCHAR(10) PRIMARY KEY,
-    password VARCHAR(100) DEFAULT 'F379EAF3C831B04DE153469D1BEC345E',
-    Permission INT,--0人事部 、1挂号程序、2医生界面、3药房界面
+    password VARCHAR(32) DEFAULT '666666',
+    Permission INT DEFAULT 1,--0人事部 、1挂号程序、2医生界面、3药房界面
 )
 
 CREATE TABLE Dept
 (
-    Deptno CHAR(3) PRIMARY KEY,
+    Deptno CHAR(6) PRIMARY KEY,
     Deptname VARCHAR(40) NOT NULL,
     Dnum INT,
 );
 
 CREATE TABLE Doctor
 (   
-    Dno CHAR(9) PRIMARY KEY,
+    Dno CHAR(8) PRIMARY KEY,
     Dname VARCHAR(20) NOT NULL,
     Dsex CHAR(2) CHECK (Dsex in('男','女')),
     Dbirth DATE,
     Dprot CHAR(16),--职称 
-    Deptno CHAR(3) NOT NULL,
+    Deptno CHAR(6) NOT NULL,
         FOREIGN KEY (Deptno) REFERENCES Dept(Deptno)
             ON UPDATE CASCADE,  
     Pnum INT DEFAULT 0,
 );
-
+/*
 CREATE TABLE Dschedule
 (
     Dno CHAR(9),
@@ -39,7 +39,7 @@ CREATE TABLE Dschedule
     PRIMARY KEY (Dno,Dworkdate,Dworktime),
 );
 
-/*CREATE TABLE Drelexdate
+CREATE TABLE Drelexdate
 (
     Dno CHAR(9),
         FOREIGN KEY (Dno) REFERENCES Doctor(Dno)
@@ -51,7 +51,7 @@ CREATE TABLE Dschedule
 */
 CREATE TABLE Patient
 (   
-    Pno CHAR(9)  PRIMARY KEY,
+    Pno CHAR(6)  PRIMARY KEY,
     Pname VARCHAR(20),
     Psex CHAR(2) CHECK (Psex in('男','女')),
     Pbirth DATE ,
@@ -61,16 +61,16 @@ CREATE TABLE Patient
 
 CREATE TABLE Prescription
 (   
-    RXno CHAR(9) PRIMARY KEY,
-    Dno CHAR(9),
+    RXno CHAR(26) PRIMARY KEY,
+    Dno CHAR(8),
         FOREIGN KEY (Dno) REFERENCES Doctor(Dno),
-    Pno CHAR(9),
+    Pno CHAR(6),
         FOREIGN KEY (Pno) REFERENCES Patient(Pno)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
     RXdate DATE,
     RXtime TIME,
-    Paystate BIT DEFAULT FALSE,--布尔
+    Paystate BIT DEFAULT 0,--布尔
     Price INT,
     Intro VARCHAR(200),
 );
@@ -107,24 +107,24 @@ CREATE TABLE PMM --药房中有的药
 
 CREATE TABLE Register --挂号
 (
-    Dno CHAR(9),
+    Dno CHAR(8),
         FOREIGN KEY (Dno) REFERENCES Doctor(Dno),
-    Pno CHAR(9),
+    Pno CHAR(6),
         FOREIGN KEY (Pno) REFERENCES Patient(Pno)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
-    Rno CHAR(6),
+    Rno CHAR(26),
     --Rtype CHAR(4) CHECK (Rtype IN ('专家','普通')),
     Rdate DATE,
     Rtime_begin TIME,
     Rtime_end TIME,
-    Rstate TINYINT CHECK(Rstate IN(0,1,2)) --等待、进行、结束
-    PRIMARY KEY(Dno,Pno),
+    Rstate TINYINT CHECK(Rstate IN(0,1,2)) DEFAULT 0,--等待、进行、结束
+    PRIMARY KEY(Rno),
 );
 
 CREATE TABLE RXM --处方中开的药
 (
-    RXno CHAR(9),
+    RXno CHAR(26),
         FOREIGN KEY (RXno) REFERENCES Prescription(RXno)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
@@ -132,7 +132,8 @@ CREATE TABLE RXM --处方中开的药
         FOREIGN KEY(Mno) REFERENCES Medicine(Mno)
              ON UPDATE CASCADE,
     Mnum SMALLINT,
-    Mstate BIT,--是否取药
+    Mstate BIT DEFAULT 0,--是否取药
     PRIMARY KEY (RXno,Mno),
 );
+
 

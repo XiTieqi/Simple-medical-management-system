@@ -31,10 +31,18 @@ namespace Management_Application.Register
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            string sql;
-            sql = "SELECT ISNULL((SELECT TOP(1) 1 FROM Account WHERE Patient=" + Pno.Text + "), 0)";
-            ds = con.Getds(sql);
-            if (ds.Tables["RoomType"].Select("Number=" + 1).Length < 0)
+           // string sql;
+            sql = "SELECT ISNULL((SELECT TOP(1) 1 FROM Patient WHERE Pno=" + Pno.Text + "), 0)";
+            try
+            {
+                ds = con.Getds(sql);
+            }
+            catch
+            {
+                MessageBox.Show("请输入正确的账号");
+            }
+            
+            if (ds.Tables[0].Rows[0][0].Equals(0))
             {
                 MessageBox.Show("账户不存在！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -44,6 +52,7 @@ namespace Management_Application.Register
                 paW.Show();
                 this.Hide();
             }
+            Pno.Text = "";
         }
 
         private void EnroButton_Click(object sender, RoutedEventArgs e)

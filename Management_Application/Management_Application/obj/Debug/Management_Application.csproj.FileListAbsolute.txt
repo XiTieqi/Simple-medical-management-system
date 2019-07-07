@@ -35,3 +35,5 @@ D:\DB\Simple-medical-management-system\Management_Application\Management_Applica
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Register\ChargeWindow.baml
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Register\PatientWindow.baml
 D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Register\RegisterWindow.baml
+D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Register\EnrollWindow.g.cs
+D:\DB\Simple-medical-management-system\Management_Application\Management_Application\obj\Debug\Register\EnrollWindow.baml

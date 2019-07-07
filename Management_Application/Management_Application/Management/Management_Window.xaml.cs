@@ -41,10 +41,10 @@ namespace Management_Application.Management
                 {
                     sql = "SELECT Dno AS 医生编号, Dname AS 姓名, Dsex AS 性别 , Dbirth AS 出生日期, Dprot AS 职称, Deptname AS 所属科室 FROM Doctor,Dept WHERE Doctor.Deptno=Dept.Deptno ";
                 }
-                else if (Wstate == 3) 
+               /* else if (Wstate == 3) 
                 {
                     sql = "SELECT username AS 账号,Permission AS 账户类型（0管理员账户、1挂号程序、2医生账户、3药房账户）FROM Account";
-                }
+                }*/
                 con.BindDataGrid(manageDataGrid, sql);
                 //manageDataGrid.Columns[0].IsReadOnly = true;
                 //manageDataGrid.AllowDrop = false;
@@ -84,37 +84,44 @@ namespace Management_Application.Management
             {
                 Dept_Window deptW = new Dept_Window();
                 deptW.Owner = this;
-                deptW.Show();//To Do 刷新操作
+                //deptW.Show();//To Do 刷新操作
             }
             else if (Wstate == 1)
             {
                 Pharmacy_Window pharW = new Pharmacy_Window();
                 pharW.Owner = this;
-                pharW.Show();
+               // pharW.Show();
             }
             else if (Wstate == 2)
             {
                 Doctor_Window drW = new Doctor_Window();
                 drW.Owner = this;
-                drW.Show();
+               // drW.Show();
             }
+            /*
             else if (Wstate == 3) 
             {
                 AccountWindow acW = new AccountWindow();
                 acW.Owner = this;
                 acW.Show();
-            }
+            }*/
         }
+        /*
         private void AccountButton_Click(object sender, RoutedEventArgs e)
         {
             Changekey.Visibility = Visibility.Visible;
             Wstate = 3;
             setBind();
         }
-
+        */
         private void ManageDataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
             DataRow editdata = e.Row.Item as DataRow;
+
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

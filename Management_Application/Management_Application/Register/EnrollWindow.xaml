@@ -11,13 +11,14 @@
         <Label Content="性别" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="234,59,0,0"/>
         <Label Content="出生日期" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="549,58,0,0"/>
         <Label Content="姓名" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,61,0,0"/>
-        <TextBox Name="Textname" HorizontalAlignment="Left" Height="23" Margin="126,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="98" RenderTransformOrigin="-0.008,0.478" TextChanged="Textname_TextChanged"/>
-        <DatePicker Name="Date" HorizontalAlignment="Left" Margin="628,58,0,0" VerticalAlignment="Top" SelectedDateFormat="Long" Text="选择出生日期" DisplayDate="2000/1/1" DisplayDateStart="1900/1/1" DisplayDateEnd="2020/1/1" SelectedDate="{x:Static System:DateTime.Now}" RenderTransformOrigin="0.431,0.417"/>
+        <TextBox Name="Textname" HorizontalAlignment="Left" Height="23" Margin="126,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="98" RenderTransformOrigin="-0.008,0.478" />
+        <DatePicker Name="Date" HorizontalAlignment="Left" Margin="628,58,0,0" VerticalAlignment="Top" SelectedDateFormat="Long" Text="选择出生日期" DisplayDate="2000/1/1" DisplayDateStart="1900/1/1" DisplayDateEnd="2020/1/1" SelectedDate="{x:Static System:DateTime.Now}" RenderTransformOrigin="0.431,0.417" />
         <Label Content="社保卡号" HorizontalAlignment="Left" Margin="342,59,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="Pno" HorizontalAlignment="Left" Height="23" Margin="405,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="Pno_TextChanged"/>
+        <TextBox Name="Pno" HorizontalAlignment="Left" Height="23" Margin="405,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Name="EnrollButton" Content="注册" HorizontalAlignment="Left" Margin="247,191,0,0" VerticalAlignment="Top" Width="75" Click="EnrollButton_Click"/>
         <Button Name="ReturnButton" Content="返回" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="431,191,0,0" Click="ReturnButton_Click"/>
         <ComboBox Name="Sex" HorizontalAlignment="Left" Margin="283,61,0,0" VerticalAlignment="Top" Width="33"/>
+        <Label Name="testtemp" Content="" HorizontalAlignment="Left" Margin="393,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.533,0.307"/>
 
     </Grid>
 </Window>

@@ -26,11 +26,13 @@ namespace Management_Application.Register
         sqlConnect con = new sqlConnect();
         public DataSet ds = new DataSet();
         private string sql;
+        float bal, pay;
         public ChargeWindow(string no,PatientWindow _PaW)
         {
             InitializeComponent();
             pno = no;
             PaW = _PaW;
+            textprint();
         }
 
         private void ChargeHundredButton_Click(object sender, RoutedEventArgs e)
@@ -47,10 +49,10 @@ namespace Management_Application.Register
         }
         private void ChargeButton_Click(object sender, RoutedEventArgs e)
         {
-            int num;
+            float num;
             try
             {
-                num = int.Parse(Money.Text);
+                num = float.Parse(Money.Text);
                 charge(num);
             }
             catch
@@ -63,10 +65,24 @@ namespace Management_Application.Register
             PaW.Visibility = Visibility.Visible;
             this.Close();
         }
-        public void charge(int num)
+        public void charge(float num)
         {
-            sql = "update Patient set Pbal=Pbal+" + string.Format("{0:000000.00}", num) + "where Patient.Pno=" + pno;//给该用户加钱的语句
+            sql = "select Pbal from Patient where Pno ='" + pno + "'";
+            ds = con.Getds(sql);
+            bal = float.Parse(ds.Tables[0].Rows[0]["Pbal"].ToString());
+            bal = bal + num;
+            sql = "select min(Price) as 价格,RXno as 处方单号 from Prescription where Pno = '" + pno + " ' and Paystate = 0";
+            ds = con.Getds(sql);
+            pay = float.Parse(ds.Tables[0].Rows[0]["价格"].ToString());
+            string RXno = ds.Tables[0].Rows[0]["处方单号"].ToString();
+            while (bal > pay && pay > 0) 
+            {
+                bal = bal - pay;
+                sql = " update on Prescription set Paystate = 1 where RXno = '" + RXno + "'";
+            }
+            sql = "update Patient set Pbal=" + string.Format("{0:000000.00}", bal) + "where Patient.Pno=" + pno;//给该用户加钱的语句
             con.OperateData(sql);
+            
             textprint();
         }
         public void textprint()
@@ -74,7 +90,7 @@ namespace Management_Application.Register
             DataSet ds;
             sql = "SELECT Pbal FROM Patient WHERE Pno= " + pno;
             ds = con.Getds(sql);
-            this.Pbal.Content = ds.Tables[0].Rows[0];
+            this.Pbal.Content = ds.Tables[0].Rows[0]["Pbal"].ToString();
         }
     }
 }

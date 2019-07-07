@@ -30,19 +30,56 @@ namespace Management_Application.Pharmacy
             InitializeComponent();
         }
 
-        private void RXno_TextChanged(object sender, TextChangedEventArgs e)
+        private void Mgrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            sql = "select Pno from Prescription where RXno=" + RXno.Text;
-            ds = con.Getds(sql);
-            pno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+            if (Mgrid.SelectedIndex != -1)
+            {
+                var b = (DataRowView)Mgrid.SelectedItem;
+                string mno = b["药品编号"].ToString();
+                sql = "update RXM set Mstate = 1 where RXno = '" + RXno.Text + "'and Mno= '" + mno + "'";
+                con.OperateData(sql);
 
-            sql = "select Pname from Patient where Pno=" + pno;
-            ds = con.Getds(sql);
-            pname = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                setgrid();
+            }
+                
 
-            sql = "select  Mno as 药品编号, Mname as 药品名称 , Mnum as 药物数量,Mstate as  药物状态 , Mprice as 药品单价,  Mtype as 药片类型 from Medicine, RXM " +
-                "where Medicine.Mno= RXM.Mno and RXM.RXno=" + RXno.Text;
-            con.BindDataGrid(Mgrid, sql);
         }
+
+        private void RXno_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                sql = "select Pno from Prescription where RXno=" + RXno.Text;
+                try
+                {
+                    ds = con.Getds(sql);
+                    pno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    Pno.Content = pno;
+                    sql = "select Pname from Patient where Pno=" + pno;
+                    ds = con.Getds(sql);
+                    pname = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    Pname.Content = pname;
+                    setgrid();
+                }
+                catch
+                {
+                    MessageBox.Show("药方单号错误");
+                }
+                RXno.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+            
+        }
+
+        private void setgrid()
+        {
+            sql = "select  RXM.Mno as 药品编号, Medicine.Mname as 药品名称 , RXM.Mnum as 药物数量,RXM.Mstate as  药物状态 , Medicine.Mprice as 药品单价, Medicine.Mtype as 药片类型 from Medicine, RXM where Medicine.Mno= RXM.Mno and RXM.RXno=" + RXno.Text;
+            ds = con.Getds(sql);
+            Mgrid.ItemsSource = ds.Tables[0].DefaultView;
+        }
+        
+
+
+
+
     }
 }

@@ -22,12 +22,15 @@ namespace Management_Application.Dotctor
     /// </summary>
     public partial class DoctorMainWindow : Window
     {
+        SqlConnection sqlConn = new SqlConnection(@"server = TIEQIDEPAVILION\SQLEXPRESS; database = Medical_Data_Management_System; uid = Medical_Data_Management; pwd = 666666");
+        
         sqlConnect con = new sqlConnect();
         public DataSet ds = new DataSet();
         public DataSet Mcom = new DataSet();
         private string sql;
-        string dno, pno, rxno;
+        string dno, pno, rno;
         bool state = true;
+      
         public DoctorMainWindow(string _Dno)
         {
             InitializeComponent();
@@ -37,11 +40,12 @@ namespace Management_Application.Dotctor
             ds = con.Getds(sql);
             Mcom = ds;
             Mname.ItemsSource = Mcom.Tables[0].Columns;
+            comboxselect();
         }
 
         private void setGrid()
         {
-            string gridsql = "SELECT Mdecine.Mno Mdicine.Mname RXM.Mnum from RXM Mdicine where Mdicine.Mno=RXM.Mno and RXM.RXno=" + rxno;//查看处方药品的sql语句
+            string gridsql = "SELECT Medicine.Mno AS 药品ID, Medicine.Mname AS 药品名, RXM.Mnum AS 用药数量 from RXM, Medicine where Medicine.Mno=RXM.Mno and RXM.RXno=" + rno;//查看处方药品的sql语句
             con.BindDataGrid(RXM, gridsql);
         }
 
@@ -58,8 +62,16 @@ namespace Management_Application.Dotctor
             }
             else
             {
-                sql = "insert into RXM(RXno,Mno,Mnum) values(" + rxno + "," + Textno.Text + "," + Textnum.Text + ")";//添加药品名称数量...编号
+                sql = "insert into RXM(RXno,Mno,Mnum) values('" + rno + "'," + Textno.Text + "," + Textnum.Text + ")";//添加药品名称数量...编号
                 con.OperateData(sql);
+                /*try
+                {
+                    con.OperateData(sql);
+                }
+                catch
+                {
+                    MessageBox.Show("请选接诊病人！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+                }*/
             }
             setGrid();
         }
@@ -69,7 +81,6 @@ namespace Management_Application.Dotctor
             if (state)
             {
                 LoadNextPatient();
-                state = false;
             }
             else
             {
@@ -98,10 +109,30 @@ namespace Management_Application.Dotctor
             Mname.ItemsSource = ListSelect;
             Mname.IsDropDownOpen = true;
         }
+        private void comboxselect()
+        {
 
+            string s;
+            List<string> ListAll = new List<string>();
+            List<string> ListSelect = new List<string>();
+            for (int i = 0; i < Mcom.Tables[0].Rows.Count; i++)
+            {
+                s = Mcom.Tables[0].Rows[i][0].ToString();
+                ListAll.Add(s);
+            }
+            ListSelect.Clear();
+            foreach (var item in ListAll)
+            {
+                if (item.Contains(Mname.Text.Trim()))
+                {
+                    ListSelect.Add(item);
+                }
+            }
+            Mname.ItemsSource = ListSelect;
+        }
         private void Mname_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            sql = "";//查看药物ID
+            sql = "SELECT Mno FROM Medicine WHERE Mname='" + Mname.SelectedItem.ToString() + "'";//查看药物ID
             ds = con.Getds(sql);
             Textno.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
         }
@@ -109,33 +140,45 @@ namespace Management_Application.Dotctor
         private void LoadNextPatient()
         {
             //读取挂号信息
-            sql = "SELECT Prescription.Pno as 病人ID ,Patient.Pname as 病人姓名, Doctor.Pnum as 剩余病人数量, Prescription.RXno as 处方ID, Register.Rtime_begin as 挂号时间"+
-                  "from Presciption Patient Doctor Register " +
-                  "where Register.Dno=" + dno + "and Register.Rtime_begin=（selsect Min（Rtime_begin） from Register where Rstate=0 and Dno=+" + dno + "）" +
-                  " and Patient.Pno=Register.Pno Docotor.Dno=" + dno +
-                  "and Prescription.Dno=" + dno + " and Prescription.Pno=Register.Pno";
-            ds = con.Getds(sql);
-            //设置属性表
-            pno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
-            Pno.Content = pno;
-            Pname.Content = ds.Tables[0].Rows[0].ItemArray[1].ToString();
-            Number.Content = ds.Tables[0].Rows[0].ItemArray[2].ToString();
-            rxno = ds.Tables[0].Rows[0].ItemArray[3].ToString();
-            RXno.Content = rxno;
-            RegisterTime.Content = ds.Tables[0].Rows[0].ItemArray[4].ToString();
-            //更改就诊状态
-            sql = "update Register" +
-                "set Rstate=1  " +
-                "where Register.Dno=" + dno + " and Register.Pno=" + pno;
-            con.OperateData(sql);
-            setGrid();
+            sql = "SELECT Patient.Pno as 病人ID ,Patient.Pname as 病人姓名, Doctor.Pnum as 剩余病人数量, Register.Rno as 处方ID, Register.Rtime_begin as 挂号时间" +
+                  " from Prescription ,Patient ,Doctor,Register where Register.Dno=" + dno + " and Register.Rtime_begin=(select Min(Rtime_begin) from Register where Rstate=0 and Dno=" + dno + 
+                  ") and Patient.Pno=Register.Pno and Doctor.Dno=" + dno +
+                  " ";
+
+            //ds = con.Getds(sql);
+
+            sqlConn.Open();
+            SqlCommand sqlComm = new SqlCommand(sql, sqlConn);
+            SqlDataReader reader = sqlComm.ExecuteReader();
+
+            if (!reader.Read()) 
+            {
+                MessageBox.Show("当前已无病人");
+                state = true;
+            }
+            else
+            {
+                pno = reader["病人ID"].ToString();
+                Pno.Content = pno;
+                Pname.Content = reader["病人姓名"].ToString();
+                Number.Content = reader["剩余病人数量"].ToString();
+                rno = reader["处方ID"].ToString();
+                RXno.Content = rno;
+                RegisterTime.Content = reader["挂号时间"].ToString();
+                sqlConn.Close();
+                sql = "update Register set Rstate=1 where Register.Rno='" + rno + "'";
+                con.OperateData(sql);
+                setGrid();
+                state = false;
+            }
+
+           
         }
         private void EndThisPatient()
         {
+            string temp=DateTime.Now.ToLongTimeString().ToString();
             //结束该病人的就诊
-            sql = "update Register" +
-                "set Rstate=2  Rtime_end=" + DateTime.Now.ToLongTimeString().ToString() +
-            "where Register.Dno=" + dno + " and Register.Pno=" + pno;
+            sql = "update Register set Rstate='2',Rtime_end='" + DateTime.Now.ToLongTimeString().ToString() +"' where Rno=" + rno + "";
             con.OperateData(sql);
             sql = "update Doctor set Pnum = Pnum - 1 where Doctor.Dno =" + dno;
             con.OperateData(sql);

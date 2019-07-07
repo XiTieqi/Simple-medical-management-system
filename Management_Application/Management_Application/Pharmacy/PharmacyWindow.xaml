@@ -8,12 +8,21 @@
         Title="PharmacyWindow" Height="450" Width="800">
     <Grid>
         <Label Content="处方号" HorizontalAlignment="Left" Margin="37,35,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="RXno" HorizontalAlignment="Left" Height="23" Margin="88,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="RXno_TextChanged"/>
+        <TextBox Name="RXno" HorizontalAlignment="Left" Height="23" Margin="88,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewKeyDown="RXno_PreviewKeyDown"/>
         <Label Content="病人ID:" HorizontalAlignment="Left" Margin="233,31,0,0" VerticalAlignment="Top"/>
         <Label Name="Pno" Content="0000000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="291,31,0,0"/>
         <Label Content="病人名称：" HorizontalAlignment="Left" Margin="410,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.15,0.72"/>
         <Label Name="Pname" Content="***" HorizontalAlignment="Left" Margin="492,31,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name="Mgrid" HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="569" Margin="37,126,0,0" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}"  SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True"/>
+        <DataGrid Name="Mgrid" HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="569" Margin="47,126,0,0" AutoGenerateColumns="False" ItemsSource="{Binding Path=table1}"  SelectionUnit="FullRow" CanUserResizeColumns="True" CanUserResizeRows="True" MouseDoubleClick="Mgrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="药品编号" Width="60" Binding="{Binding 药品编号, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="药品名称" Width="80" Binding="{Binding 药品名称, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="药物数量" Width="80" Binding="{Binding 药物数量, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="药物状态" Width="80" Binding="{Binding 药物状态, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="药品单价" Width="80" Binding="{Binding 药品单价, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="药片类型" Width="80" Binding="{Binding 药片类型, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="药物" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,96,0,0"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="682,10,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>

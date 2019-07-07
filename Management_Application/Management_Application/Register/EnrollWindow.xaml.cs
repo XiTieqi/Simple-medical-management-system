@@ -37,13 +37,20 @@ namespace Management_Application.Register
 
         private void EnrollButton_Click(object sender, RoutedEventArgs e)
         {
-            string sql;
-            sql = "SELECT ISNULL((SELECT TOP(1) 1 FROM Account WHERE Patient=" + Pno.Text + "), 0)";
+           // string sql;
+            sql = "SELECT ISNULL((SELECT TOP(1) 1 FROM  Patient WHERE Pno=" + Pno.Text + "), 0)";
             ds = con.Getds(sql);
-            if (ds.Tables["RoomType"].Select("Number=" + 1).Length < 0)
+            if (ds.Tables[0].Rows[0][0].Equals(0))
             {
-                sql = "insert into patient values(" + Pno.Text + "," + Textname.Text + "," + Sex.Text + "," + Date.Text + "0.00)";//新加一个病人账户的语句
-                con.OperateData(sql);
+                sql = "insert into patient values('" + Pno.Text + "','" + Textname.Text + "','" + Sex.Text + "','" + Date.SelectedDate.Value.Date.ToShortDateString() + "',0)";//新加一个病人账户的语句
+                try
+                {
+                    con.OperateData(sql);
+                }
+                catch
+                {
+                    MessageBox.Show("请输入正确的信息");
+                }
                 useW.Visibility = Visibility.Visible;
                 this.Close();
             }
@@ -58,14 +65,6 @@ namespace Management_Application.Register
             this.Close();
         }
 
-        private void Pno_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
-
-        private void Textname_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

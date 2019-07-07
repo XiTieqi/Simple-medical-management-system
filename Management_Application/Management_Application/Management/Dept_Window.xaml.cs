@@ -24,10 +24,10 @@ namespace Management_Application.Management
         sqlConnect con = new sqlConnect();
         public DataSet ds = new DataSet();
         private string sql;
+
         public Dept_Window()
         {
             InitializeComponent();
-
         }
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
@@ -35,6 +35,7 @@ namespace Management_Application.Management
             {
                 sql = "INSERT INTO Dept VALUES('" + TextDeptNo.Text + "','" + TextDeptName.Text + "'," + "0)";
                 con.OperateData(sql);
+                this.Close();
             }
             catch
             {
