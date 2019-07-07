@@ -97,6 +97,8 @@ namespace Management_Application.Register
         }
 
         internal System.Windows.Controls.DataGrid RegisterGrid;
+        internal System.Windows.Controls.DataGrid DeptGrid;
+        internal System.Windows.Controls.DataGrid DGrid;
     }
 }
 

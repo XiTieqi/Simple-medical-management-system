@@ -98,10 +98,18 @@ namespace Management_Application.Management
                 drW.Owner = this;
                 drW.Show();
             }
+            else if (Wstate == 3) 
+            {
+                AccountWindow acW = new AccountWindow();
+                acW.Owner = this;
+                acW.Show();
+            }
         }
         private void AccountButton_Click(object sender, RoutedEventArgs e)
         {
             Changekey.Visibility = Visibility.Visible;
+            Wstate = 3;
+            setBind();
         }
 
         private void ManageDataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)

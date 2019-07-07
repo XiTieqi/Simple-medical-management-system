@@ -137,6 +137,8 @@ namespace Management_Application.Dotctor
                 "set Rstate=2  Rtime_end=" + DateTime.Now.ToLongTimeString().ToString() +
             "where Register.Dno=" + dno + " and Register.Pno=" + pno;
             con.OperateData(sql);
+            sql = "update Doctor set Pnum = Pnum - 1 where Doctor.Dno =" + dno;
+            con.OperateData(sql);
         }
     }
 }

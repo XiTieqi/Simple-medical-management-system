@@ -23,7 +23,7 @@ CREATE TABLE Doctor
     Deptno CHAR(3) NOT NULL,
         FOREIGN KEY (Deptno) REFERENCES Dept(Deptno)
             ON UPDATE CASCADE,  
-    Drelexdate INT,
+    Pnum INT DEFAULT 0,
 );
 
 CREATE TABLE Dschedule
@@ -70,7 +70,7 @@ CREATE TABLE Prescription
             ON UPDATE CASCADE,
     RXdate DATE,
     RXtime TIME,
-    Paystate BIT,--布尔
+    Paystate BIT DEFAULT FALSE,--布尔
     Price INT,
     Intro VARCHAR(200),
 );
@@ -84,13 +84,13 @@ CREATE TABLE Medicine
     Mdescrip VARCHAR(50),
     Mnum INT,
 );
-
+/*
 CREATE TABLE Pharmacy --药房
 (
     PMno SMALLINT PRIMARY KEY,
     Picksite CHAR(20),
 );
-/*
+
 CREATE TABLE PMM --药房中有的药
 (
     PMno SMALLINT,

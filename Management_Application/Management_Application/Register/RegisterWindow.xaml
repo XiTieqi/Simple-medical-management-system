@@ -8,13 +8,39 @@
         mc:Ignorable="d"
         Title="RegisterWindow" Height="450" Width="800">
     <Grid>
-        <Button Name="ReturnButton" Content="返回" HorizontalAlignment="Left" Margin="68,306,0,0" VerticalAlignment="Top" Width="75" Height="42" Click="ReturnButton_Click"/>
+        <Button Name="ReturnButton" Content="返回" HorizontalAlignment="Left" Margin="97,347,0,0" VerticalAlignment="Top" Width="75" Height="42" Click="ReturnButton_Click"/>
         <Label Content="日期" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top"/>
         <Label Content="{x:Static sys:DateTime.Now}" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="余额" HorizontalAlignment="Left" Margin="322,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="******.**" HorizontalAlignment="Left" Margin="386,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="已挂号" HorizontalAlignment="Left" Margin="177,289,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name="RegisterGrid" HorizontalAlignment="Left" Height="79" Margin="247,306,0,0" VerticalAlignment="Top" Width="445" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}" SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True"/>
+        <Label Content="已挂号" HorizontalAlignment="Left" Margin="256,313,0,0" VerticalAlignment="Top"/>
+        <DataGrid Name="RegisterGrid" HorizontalAlignment="Left" Height="79" Margin="337,330,0,0" VerticalAlignment="Top" Width="445" AutoGenerateColumns="True" ItemsSource="{Binding Path=table1}" SelectionUnit="Cell" CanUserResizeColumns="True" CanUserResizeRows="True"/>
+        <DataGrid Name="DeptGrid" HorizontalAlignment="Left" Height="222" VerticalAlignment="Top" Width="160" Margin="97,74,0,0" AutoGenerateColumns="False" CanUserAddRows="False" MouseDoubleClick="ChooseDept">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="" Width="10">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox ></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="科室编号" Width="60" Binding="{Binding 科室编号, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="科室名称" Width="80" Binding="{Binding 科室名称, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="DGrid" HorizontalAlignment="Left" Height="222" Margin="382,74,0,0" VerticalAlignment="Top" Width="319" AutoGenerateColumns="False" SelectionUnit="FullRow" IsReadOnly="True" MouseDoubleClick="DGrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="" Width="10">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox ></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="医生姓名" Width="70" Binding="{Binding 医生姓名, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="性别" Width="40" Binding="{Binding 职称, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="职称" Width="80" Binding="{Binding 职称, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="编号" Width="160" Binding="{Binding 编号, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

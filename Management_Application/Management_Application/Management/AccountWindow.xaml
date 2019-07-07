@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="AccountWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="添加" HorizontalAlignment="Left" Margin="285,193,0,0" VerticalAlignment="Top" Width="82" Height="42"/>
-        <Label Content="账户:" HorizontalAlignment="Left" Margin="219,88,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="AccountNo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="272,90,0,0"/>
-        <Label Name="Password" Content="密码" HorizontalAlignment="Left" Margin="219,134,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="272,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="412,193,0,0" VerticalAlignment="Top" Width="75" Height="38"/>
+        <Button Content="添加" HorizontalAlignment="Left" Margin="114,263,0,0" VerticalAlignment="Top" Width="82" Height="42"/>
+        <Label Content="账户:" HorizontalAlignment="Left" Margin="114,147,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="AccountNo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="167,149,0,0"/>
+        <Label Name="Password" Content="密码" HorizontalAlignment="Left" Margin="114,193,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="167,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="421,265,0,0" VerticalAlignment="Top" Width="75" Height="38"/>
 
 
     </Grid>
